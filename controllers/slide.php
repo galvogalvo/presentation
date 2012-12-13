@@ -12,11 +12,16 @@ class SlideController extends AppController
 
 	public function actionView(){
 
+		$id = $this->getPresentationIdFromUrl();
+
 		if(!$_SESSION['login'] == 1){
-			$redirect = "/login/login?id=".$this->getPresentationIdFromUrl();
+			$redirect = "/login/login?id=".$id;
 			$this->redirect($redirect);
 		}
 
+		$content = $this->getContent($id);
+		
+		$this->setVar('presentationContent', $content);
 		$this->setLayout('slide');
 		$this->loadView($this->controllerName . '/default');	
 	}
@@ -43,6 +48,21 @@ class SlideController extends AppController
 		if(is_numeric($this->get['id']) && is_numeric($this->get['slide'])){
 			$this->doEvent($this->get['id'], 'ask', $this->get['slide']);
 		}
+	}
+
+	private function getContent($id){
+
+	$file = UPLOAD_DIR.$id.".html";
+
+		if(file_exists($file)){
+			return file_get_contents($file);
+		}
+
+		return $this->errorMessage();
+	}
+
+	private function errorMessage(){
+		return "OH NO, IT'S ALL GONE WRONG";
 	}
 
 	private function doEvent($id, $action, $slide=null){

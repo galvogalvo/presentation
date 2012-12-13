@@ -6,7 +6,7 @@ class UploadController extends AppController
 
 	function __construct(){
 		$this->setLayout('rga');
-		$this->uploadDir = APP_PATH."/uploads/";
+		$this->uploadDir = UPLOAD_DIR;
 	}
 
 	public function actionUpload(){

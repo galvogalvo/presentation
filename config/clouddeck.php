@@ -2,6 +2,7 @@
 include(APP_PATH.'libs/pusher/Pusher.php');
 
 /* cloud deck config */
+define('UPLOAD_DIR', APP_PATH."uploads/");
 
 //pusher
 define('PUSHER_KEY', '20431aa4f88c671606eb');
