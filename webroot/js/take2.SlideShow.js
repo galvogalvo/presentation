@@ -28,9 +28,7 @@ take2.SlideShow = (function() {
 		this.applyTransform(this.getTransform());
 
 		this.slides = this.toElement().find('.slide');
-		this.currentSlide = 0;
-
-		this.slides.hide();
+		this.currentSlide = 1;
 
 		this.goToSlide(this.currentSlide);
 
@@ -67,10 +65,11 @@ take2.SlideShow = (function() {
 
 	SlideShowProto.goToSlide = function(anSlideNumber)
 	{
-		this.slides.hide();
+		$('.slide.active').removeClass('active');
 
 		this.currentSlide = anSlideNumber;
-		$(this.slides[this.currentSlide]).show();
+
+		$(this.slides[this.currentSlide-1]).addClass('active');
 	}
 
 	SlideShowProto.toElement = function()

@@ -16,7 +16,6 @@
 	<link rel="stylesheet" media="screen" href="css/all.css">
 </head>
 
-
 <body class="full">
 
 	<section id="slideshow" class="slideshow">
@@ -73,10 +72,6 @@
 		</div>
 
 	</section> <!-- /. #slideshow -->
-
-
-
-
 
 
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
