@@ -1,0 +1,27 @@
+/**************************************************
+	FORM
+**************************************************/
+input {
+	font-size: $baseFontSize+px;
+	padding: 12px 0;
+	color: $fadedColor;
+
+	&:focus {
+		color: $primaryColor;
+	}
+
+	&[type=text] {
+		width: 100%;
+		border: 1px solid $fadedColor;
+		text-indent: 15px;
+	}
+
+	&[type=file] {
+		padding: 0 0 12px;
+	}
+
+	&[type=submit] {
+		color: $primaryColor;
+	}
+
+}
