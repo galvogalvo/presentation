@@ -11,6 +11,8 @@ class SlideController extends AppController
 
 	public function actionGo(){
 		
+		print_r($_GET);
+
 		$result = 'false';
 		if(is_numeric($_GET['id']) && $this->validAction($_GET['action'])){ //valid slide
 

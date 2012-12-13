@@ -4,7 +4,7 @@ class UploadController extends AppController
 {
 
 	function __construct(){
-		$this->setLayout(null);
+		$this->setLayout('rga');
 	}
 
 	public function actionUpload(){
