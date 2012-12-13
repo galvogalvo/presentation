@@ -55,7 +55,12 @@
 			</div>
 		</div>
 
+		<div id="slide-progress" class="slide-progress">
+		<strong>01</strong> / 25
+	</div>
+
 	</section> <!-- /. #slideshow -->
+
 
 
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>

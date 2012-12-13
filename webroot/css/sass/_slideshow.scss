@@ -75,4 +75,12 @@
 			@include transform(translateX(-50%));
 		}
 	}
+
+	.slide-progress {
+		position: absolute;
+		left: 20px;
+		bottom: 20px;
+		font-size: 14px;
+		color: $fadedColor;
+	}
 }

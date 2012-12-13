@@ -297,6 +297,13 @@ a:active {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
+  /* line 79, sass/_slideshow.scss */
+  .full .slide-progress {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    color: #cccccc; }
 
 /**************************************************
 	NOTIFICATIONS
