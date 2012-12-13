@@ -13,7 +13,7 @@ take2.App = (function() {
 
 		this.initialize();
 
-		this.attach();
+		//this.attach();
 	}
 
 	// Inherit the MicroEvent class
@@ -29,7 +29,7 @@ take2.App = (function() {
 		this.actionsChannel = this.pusher.subscribe('actions');
 
 		// Application Components
-		this.slideshow = new take2.SlideShow();
+		//this.slideshow = new take2.SlideShow($('#slideshow'));
 
 		return this;
 	}
@@ -44,12 +44,8 @@ take2.App = (function() {
 			_this.onControlsStart(aoData);
 		});
 
-		this.controlsChannel.bind('previous', function(aoData) {
+		this.controlsChannel.bind('show', function(aoData) {
 			_this.onControlsPrevious(aoData);
-		});
-
-		this.controlsChannel.bind('next', function(aoData) {
-			_this.onControlsNext(aoData);
 		});
 
 		this.controlsChannel.bind('end', function(aoData) {

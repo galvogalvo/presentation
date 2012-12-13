@@ -344,7 +344,7 @@ html[xmlns] .slides {
 	SLIDER
 **************************************************/
 /* line 5, sass/_slide.scss */
-.present {
+.slideshow {
   position: absolute;
   width: 100%;
   top: 50%; }

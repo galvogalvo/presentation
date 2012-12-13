@@ -14,6 +14,8 @@ take2.SlideShow = (function() {
 		jQuery.extend(this.options, aoOptions || {});
 
 		this.initialize();
+
+		this.attach();
 	}
 
 	// Inherit the MicroEvent class
@@ -23,7 +25,37 @@ take2.SlideShow = (function() {
 
 	SlideShowProto.initialize = function()
 	{
+		this.toElement().flexslider({
+			controlNav: false,
+			slideshow: false
+		});
+
+		this.positionSlideshow();
+
 		return this;
+	}
+
+	SlideShowProto.attach = function()
+	{
+		var _this = this;
+
+		$(window).resize(function(){
+			_this.positionSlideshow();
+		});
+	}
+
+	SlideShowProto.positionSlideshow = function()
+	{
+		var windowHeight = $(window).height();
+
+		this.toElement().find('.slide').css('height', windowHeight + 'px')
+
+		var slideshowHeight = this.toElement().height();
+
+		this.toElement().css({
+			'max-height': windowHeight + 'px',
+			'margin-top': -slideshowHeight / 2 + 'px'
+		})
 	}
 
 	SlideShowProto.start = function()
@@ -32,15 +64,12 @@ take2.SlideShow = (function() {
 		return this;
 	}
 
-	SlideShowProto.previous = function()
-	{
-		console.log('slideshow: previous');
-		return this;
-	}
-
-	SlideShowProto.next = function()
+	SlideShowProto.goTo = function()
 	{
 		console.log('slideshow: next');
+
+		this.toElement().find('.flex-next').click();
+
 		return this;
 	}
 

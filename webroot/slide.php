@@ -12,72 +12,20 @@
 
 	<title>R/GA Make Day 2012 - A Better Way To Present</title>
 
-	<link rel="stylesheet" media="screen" href="css/all.css">
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
-
+	<link rel="stylesheet" media="screen" href="css/all.css">
 </head>
 <body>
 
 
 
+	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+	<script src="js/libs/jquery-1.8.3.min.js"></script>
 
-	<div id="present" class="present flexslider">
+	<script src="js/rga.MicroEvent.js"></script>
+	<script src="js/take2.SlideShow.js"></script>
+	<script src="js/take2.App.js"></script>
 
-		<ul id="slides" class="slides">
-			<li class="slide" style="background-image: url(img/1.jpg);">
-				<h1>Main Title</h1>
-			</li>
-			<li class="slide" style="background-image: url(img/2.jpg);">
-				<h1>Main title</h1>
-			</li>
-			<li class="slide" style="background-image: url(img/3.jpg);">
-				<h1>Main title</h1>
-			</li>
-			<li class="slide" style="background-image: url(img/4.jpg);">
-				<h1>Main title</h1>
-			</li>
-		</ul>
-
-	</div>
-
-
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="js/libs/jquery.flexslider-min.js"></script>
-
-	<script>
-		$(function(){
-
-			var $presentView = $('#present');
-
-			$presentView.flexslider({
-				controlNav: false,
-				directionNav: true
-			});
-
-			positionSlider();
-
-			$(window).resize(function(){
-				positionSlider();
-			});
-
-			function positionSlider()
-			{
-				var windowHeight = $(window).height();
-
-				$presentView.find('.slide').css('height', windowHeight + 'px')
-
-				var sliderHeight = $presentView.height();
-
-				$presentView.css({
-					'max-height': windowHeight + 'px',
-					'margin-top': -sliderHeight / 2 + 'px'
-				})
-			}
-
-
-		});
-	</script>
-
+	<script src="js/script.js"></script>
 </body>
 </html>
