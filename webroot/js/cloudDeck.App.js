@@ -23,9 +23,11 @@ cloudDeck.App = (function() {
 
 	AppProto.initialize = function()
 	{
+		this.slideshowId = $('body').attr('data-presentation-id');
+
 		// Realtime messaging
 		this.pusher = new Pusher('20431aa4f88c671606eb');
-		this.channel = this.pusher.subscribe('slideshow-1');
+		this.channel = this.pusher.subscribe('slideshow-' + this.slideshowId);
 
 		// Application Components
 		this.slideshow = new cloudDeck.SlideShow($('#slideshow'));
@@ -90,28 +92,28 @@ cloudDeck.App = (function() {
 
 	AppProto.requestStart = function()
 	{
-		$.getJSON('/slide/start?id=1')
+		$.getJSON('/slide/start?id=' + this.slideshowId)
 			.success(function(aoData){ console.log('start success', aoData); })
 			.error(function(){ console.log('start error'); });
 	}
 
 	AppProto.requestGoTo = function(anPageNumber)
 	{
-		$.getJSON('/slide/goTo?id=1&slide=' + anPageNumber)
+		$.getJSON('/slide/goTo?id=' + this.slideshowId + '&slide=' + anPageNumber)
 			.success(function(aoData){ console.log('goTo success', aoData); })
 			.error(function(){ console.log('goTo error'); });
 	}
 
 	AppProto.requestEnd = function()
 	{
-		$.getJSON('/slide/end?id=1')
+		$.getJSON('/slide/end?id=' + this.slideshowId)
 			.success(function(aoData){ console.log('end success', aoData); })
 			.error(function(){ console.log('end error'); });
 	}
 
 	AppProto.requestAsk = function()
 	{
-		$.getJSON('/slide/ask?id=1&slide=' + this.slideshow.getCurrentSlide())
+		$.getJSON('/slide/ask?id=' + this.slideshowId + '&slide=' + this.slideshow.getCurrentSlide())
 			.success(function(aoData){ console.log('ask success', aoData); })
 			.error(function(){ console.log('ask error'); });
 	}
