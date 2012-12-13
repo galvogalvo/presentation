@@ -20,14 +20,15 @@
 
 	<div id="notification-tool" class="notification-tool">
 		<div class="comment">
+			?
 			<span class="number none">0</span>
 		</div>
 		<div class="mask"></div>
 		<ul class="tray"></ul>
 	</div>
 
-	<div class="question-flag">
-		<a href="#" title="Flag for question">Flag for question</a>
+	<div class="question-flag notification-tool">
+		<a href="#" title="Flag for question" class="comment">?</a>
 	</div>
 
 	<section id="slideshow" class="slideshow">
