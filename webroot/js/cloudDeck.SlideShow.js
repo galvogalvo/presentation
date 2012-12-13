@@ -1,9 +1,9 @@
 // Global app namespace
 //------------------------------------------------------------------------------------------------------------
-var take2 = take2 || {};
+var cloudDeck = cloudDeck || {};
 
 
-take2.SlideShow = (function() {
+cloudDeck.SlideShow = (function() {
 
 	function SlideShow(aoElement, aoOptions)
 	{

@@ -1,9 +1,9 @@
 // Global app namespace
 //------------------------------------------------------------------------------------------------------------
-var take2 = take2 || {};
+var cloudDeck = cloudDeck || {};
 
 
-take2.App = (function() {
+cloudDeck.App = (function() {
 
 	function App(aoElement, aoOptions)
 	{
@@ -28,7 +28,7 @@ take2.App = (function() {
 		this.channel = this.pusher.subscribe('slideshow-1');
 
 		// Application Components
-		this.slideshow = new take2.SlideShow($('#slideshow'));
+		this.slideshow = new cloudDeck.SlideShow($('#slideshow'));
 
 		return this;
 	}
@@ -38,8 +38,7 @@ take2.App = (function() {
 		var _this = this;
 
 		$('body').on('click', function(){
-			console.log('sfkdsfkjshdk');
-			_this.requestGoTo(4);
+			_this.requestGoTo(_this.slideshow.getCurrentSlide() + 1);
 		})
 
 		// Controls

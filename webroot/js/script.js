@@ -1,6 +1,6 @@
 // Global app namespace
 //------------------------------------------------------------------------------------------------------------
-var take2 = take2 || {};
+var cloudDeck = cloudDeck || {};
 
 
 if (typeof console == 'undefined') console = { log: function(){} };
@@ -10,13 +10,13 @@ Pusher.log = function(message) {
 };
 
 
-(function(take2){
+(function(cloudDeck){
 
 	// Dom ready
 	$(function(){
 
-		var app = new take2.App();
+		var app = new cloudDeck.App();
 
 	});
 
-})(take2);
+})(cloudDeck);
