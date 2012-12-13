@@ -218,27 +218,105 @@ a:active {
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
 
-/* line 2, sass/_notification.scss */
-.notification-tray {
+/* line 5, sass/_notification.scss */
+.notification-tool .comment {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 25px;
   height: 37px;
   width: 40px;
-  z-index: 1000;
-  background: transparent url(../img/icon-comment.png) no-repeat; }
+  background: transparent url(../img/icon-comment.png) no-repeat;
+  cursor: pointer;
+  z-index: 1000; }
 
-/* line 14, sass/_notification.scss */
-.notification-tray .number {
+/* line 16, sass/_notification.scss */
+.notification-tool .number {
   position: absolute;
   top: -10px;
   right: -10px;
-  height: 20px;
-  width: 20px;
+  padding: 0 5px;
   background: #e31936;
   color: #fff;
   font-size: 10px;
   font-weight: bold;
   line-height: 20px;
   text-align: center;
-  border-radius: 3px; }
+  -webkit-transform: translate3d(0, 0, 0); }
+
+/* line 32, sass/_notification.scss */
+.notification-tool .number.none {
+  display: none; }
+
+/* line 36, sass/_notification.scss */
+.notification-tool .tray {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  font-size: 14px;
+  z-index: 1001;
+  display: none; }
+
+/* line 46, sass/_notification.scss */
+.notification-tool .tray li {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  height: 23px;
+  line-height: 23px;
+  background: #fff;
+  border-bottom: 3px solid #000;
+  overflow: hidden; }
+
+/* line 56, sass/_notification.scss */
+.notification-tool .tray a {
+  margin-left: 20px;
+  padding: 0 10px;
+  display: block;
+  float: right;
+  background-color: #e31936;
+  color: #fff; }
+
+/* line 64, sass/_notification.scss */
+.notification-tool .tray a:hover {
+  color: #000; }
+
+/* line 69, sass/_notification.scss */
+.notification-tool .name {
+  font-weight: bold; }
+
+/* line 74, sass/_notification.scss */
+.notification-tool .mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none; }
+
+/* line 88, sass/_notification.scss */
+.notification-tool.open .tray,
+.notification-tool.open .mask {
+  display: block; }
+
+/* line 92, sass/_notification.scss */
+.notification-tool.open .tray {
+  -webkit-transform-origin: 100% 0;
+  -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+@-webkit-keyframes new-notification {
+  /* line 99, sass/_notification.scss */
+  0% {
+    -webkit-transform: scale(0.5); }
+
+  /* line 100, sass/_notification.scss */
+  50% {
+    -webkit-transform: scale(1.25); }
+
+  /* line 101, sass/_notification.scss */
+  100% {
+    -webkit-transform: scale(1); } }
+
+/* line 104, sass/_notification.scss */
+.number.new {
+  -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }

@@ -29,7 +29,7 @@ cloudDeck.App = (function() {
 
 		// Application Components
 		this.slideshow = new cloudDeck.SlideShow($('#slideshow'));
-		this.notificationTray = new cloudDeck.NotificationTray($('#notification-tray'));
+		this.notificationTray = new cloudDeck.NotificationTray($('#notification-tool'));
 
 		return this;
 	}
@@ -40,7 +40,7 @@ cloudDeck.App = (function() {
 
 		$('body').on('click', function(){
 			_this.requestGoTo(_this.slideshow.getCurrentSlide() + 1);
-		})
+		});
 
 		// Controls
 		this.channel.bind('start', function(aoData) {

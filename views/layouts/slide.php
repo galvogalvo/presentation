@@ -18,8 +18,12 @@
 
 <body class="full">
 
-	<div id="notification-tray" class="notification-tray">
-		<span class="number">10</span>
+	<div id="notification-tool" class="notification-tool">
+		<div class="comment">
+			<span class="number none">0</span>
+		</div>
+		<div class="mask"></div>
+		<ul class="tray"></ul>
 	</div>
 
 	<section id="slideshow" class="slideshow">
