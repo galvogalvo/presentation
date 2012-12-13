@@ -157,7 +157,7 @@ p {
 /**************************************************
 	SLIDESHOW
 **************************************************/
-/* line 6, sass/_slideshow.scss */
+/* line 4, sass/_slideshow.scss */
 .full {
   position: absolute;
   top: 50%;
@@ -166,15 +166,15 @@ p {
   margin: -320px 0 0 -512px;
   width: 1024px;
   height: 640px; }
-  /* line 15, sass/_slideshow.scss */
+  /* line 13, sass/_slideshow.scss */
   .full .slide {
     background: #ffffff;
     position: absolute;
     visibility: hidden; }
-    /* line 20, sass/_slideshow.scss */
+    /* line 18, sass/_slideshow.scss */
     .full .slide.active {
       visibility: visible; }
-    /* line 24, sass/_slideshow.scss */
+    /* line 22, sass/_slideshow.scss */
     .full .slide section {
       padding: 80px 120px 0;
       width: 776px;
@@ -185,10 +185,8 @@ p {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 38, sass/_slideshow.scss */
-    .full .slide img,
-    .full .slide video,
-    .full .slide object {
+    /* line 33, sass/_slideshow.scss */
+    .full .slide img, .full .slide svg, .full .slide video, .full .slide object {
       position: absolute;
       top: 0;
       left: 50%;
