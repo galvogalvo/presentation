@@ -25,6 +25,12 @@ class SlideController extends AppController
 
 		error_log('content'.$content);
 		
+		if($_SESSION['leader'] == 1){
+			$this->setLayoutVar('isLeader', 'true');
+		} else {
+			$this->setLayoutVar('isLeader', 'false');
+		}
+
 		$this->setLayoutVar('presentationId', $id);
 		$this->setVar('presentationContent', $content);
 		$this->setLayout('slide');

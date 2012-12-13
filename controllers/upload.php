@@ -23,6 +23,7 @@ class UploadController extends AppController
 				$filename = $this->getNextFilename();
 
 				$writePath = $this->uploadDir.$filename.".html";
+				
 				if(!is_dir($this->uploadDir)){
 					error_log('make upload dir');
 					mkdir($this->uploadDir);
