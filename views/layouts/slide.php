@@ -16,7 +16,7 @@
 	<link rel="stylesheet" media="screen" href="/css/all.css">
 </head>
 
-<body class="full" data-presentaton-id="<?php echo $presentationId; ?>">
+<body class="full" data-presentation-id="<?php echo $presentationId; ?>">
 
 	<div id="notification-tool" class="notification-tool">
 		<div class="comment">
@@ -26,12 +26,16 @@
 		<ul class="tray"></ul>
 	</div>
 
+	<div class="question-flag">
+		<a href="#" title="Flag for question">Flag for question</a>
+	</div>
+
 	<section id="slideshow" class="slideshow">
 
 		<span class="logo faded"><i></i> R/GA</span>
 
 		<?php echo $layoutContent ?>
-		
+
 		<div class="slide cover" id="Cover">
 			<div>
 				<section>

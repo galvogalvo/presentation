@@ -20,11 +20,11 @@ class SlideController extends AppController
 		}
 
 		$content = $this->getContent($id);
-		
+
 		$this->setLayoutVar('presentationId', $id);
 		$this->setVar('presentationContent', $content);
 		$this->setLayout('slide');
-		$this->loadView($this->controllerName . '/default');	
+		$this->loadView($this->controllerName . '/default');
 	}
 
 	public function actionGoTo(){
@@ -62,7 +62,7 @@ class SlideController extends AppController
 
 			$output = "";
 			foreach($aContent as $item){
-				$output .= "<div class='slide'><div><section>".$item."</section></div></div>";					
+				$output .= "<div class='slide'><div><section>".$item."</section></div></div>";
 			}
 			return $output;
 		}
@@ -71,11 +71,11 @@ class SlideController extends AppController
 	}
 
 	private function errorMessage(){
-		return "OH NO, IT'S ALL GONE WRONG";
+		return ""; //OH NO, IT'S ALL GONE WRONG";
 	}
 
 	private function doEvent($id, $action, $slide=null){
-		
+
 		$result = 'false';
 		if(is_numeric($id) && $this->validAction($action)){ //valid slide
 
@@ -86,9 +86,9 @@ class SlideController extends AppController
 			$result = json_encode(array('status'=>'true'));
 
 		}
-		
+
 		$this->setVar('result', $result);
-		$this->loadView($this->controllerName . '/go_action');	
+		$this->loadView($this->controllerName . '/go_action');
 	}
 
 	private function validAction($action){
