@@ -31,8 +31,6 @@
 		<a href="#" title="Flag for question" class="comment">?</a>
 	</div>
 
-	<section id="end" class="extra-slide"><h1>the End</h1></section>
-
 	<section id="slideshow" class="slideshow">
 
 		<div class='slide'>
@@ -49,6 +47,19 @@
 		</div>
 
 		<?php echo $layoutContent ?>
+
+		<div class='slide'>
+			<div>
+				<section>
+					<span class='logo-cd-small'></span>
+					<span class='logo faded'>
+						<i></i> R/GA
+					</span>
+
+					This is the end.
+				</section>
+			</div>
+		</div>
 
 	</section> <!-- /. #slideshow -->
 

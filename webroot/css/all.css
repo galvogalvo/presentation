@@ -98,23 +98,25 @@ html[xmlns] .clearfix {
   /* line 75, sass/_utils.scss */
   0% {
     visibility: visible;
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transform: scale(1.1); }
 
-  /* line 80, sass/_utils.scss */
+  /* line 81, sass/_utils.scss */
   100% {
     visibility: visible;
-    opacity: 1; } }
+    opacity: 1;
+    -webkit-transform: scale(1); } }
 
 @-webkit-keyframes new-notification {
-  /* line 88, sass/_utils.scss */
+  /* line 90, sass/_utils.scss */
   0% {
     -webkit-transform: scale(0.5); }
 
-  /* line 89, sass/_utils.scss */
+  /* line 91, sass/_utils.scss */
   50% {
     -webkit-transform: scale(1.25); }
 
-  /* line 90, sass/_utils.scss */
+  /* line 92, sass/_utils.scss */
   100% {
     -webkit-transform: scale(1); } }
 
@@ -215,7 +217,7 @@ a:active {
   margin: -320px 0 0 -512px;
   width: 1024px;
   height: 640px;
-  background: #000; }
+  background: #000000; }
   /* line 14, sass/_slideshow.scss */
   .full h1 {
     font-size: 60px;
@@ -246,12 +248,13 @@ a:active {
   .full .slide {
     background: #ffffff;
     position: absolute;
-    visibility: hidden; }
-    /* line 52, sass/_slideshow.scss */
+    visibility: hidden;
+    -webkit-transform-origin: 50% 50%; }
+    /* line 53, sass/_slideshow.scss */
     .full .slide.active {
       visibility: visible;
-      -webkit-animation: slide cubic-bezier(0.19, 1, 0.22, 1) 800ms forwards; }
-    /* line 57, sass/_slideshow.scss */
+      -webkit-animation: slide cubic-bezier(0.19, 1, 0.22, 1) 400ms forwards; }
+    /* line 58, sass/_slideshow.scss */
     .full .slide section {
       padding: 80px 120px 0;
       width: 784px;
@@ -262,7 +265,7 @@ a:active {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 68, sass/_slideshow.scss */
+    /* line 69, sass/_slideshow.scss */
     .full .slide img, .full .slide video, .full .slide object, .full .slide iframe {
       position: absolute;
       top: 0;
@@ -275,23 +278,6 @@ a:active {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-  /* line 79, sass/_slideshow.scss */
-  .full .extra-slide {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 10000;
-    background: #000;
-    color: #fff;
-    display: none; }
-  /* line 93, sass/_slideshow.scss */
-  .full.state-end .slideshow {
-    display: none; }
-  /* line 97, sass/_slideshow.scss */
-  .full.state-end #end {
-    display: block; }
 
 /**************************************************
 	NOTIFICATIONS
@@ -329,11 +315,17 @@ a:active {
     border-left: 9px solid transparent;
     border-right: 0px solid transparent;
     border-top: 9px solid #261c02; }
-/* line 43, sass/_notification.scss */
+  /* line 41, sass/_notification.scss */
+  .notification-tool .comment:hover {
+    background: #e31936; }
+    /* line 44, sass/_notification.scss */
+    .notification-tool .comment:hover:after {
+      border-top-color: #e31936; }
+/* line 51, sass/_notification.scss */
 .notification-tool.question-flag .comment {
   top: auto;
   bottom: 28px; }
-/* line 48, sass/_notification.scss */
+/* line 56, sass/_notification.scss */
 .notification-tool .number {
   position: absolute;
   top: -10px;
@@ -346,13 +338,13 @@ a:active {
   line-height: 20px;
   text-align: center;
   -webkit-transform: translate3d(0, 0, 0); }
-  /* line 63, sass/_notification.scss */
+  /* line 71, sass/_notification.scss */
   .notification-tool .number.none {
     display: none; }
-  /* line 67, sass/_notification.scss */
+  /* line 75, sass/_notification.scss */
   .notification-tool .number.new {
     -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }
-/* line 73, sass/_notification.scss */
+/* line 81, sass/_notification.scss */
 .notification-tool .tray {
   position: absolute;
   top: 20px;
@@ -360,7 +352,7 @@ a:active {
   font-size: 14px;
   z-index: 1001;
   display: none; }
-  /* line 83, sass/_notification.scss */
+  /* line 91, sass/_notification.scss */
   .notification-tool .tray li {
     margin-bottom: 5px;
     padding-left: 10px;
@@ -369,21 +361,22 @@ a:active {
     background: #fff;
     border-bottom: 3px solid #000;
     overflow: hidden; }
-  /* line 94, sass/_notification.scss */
+  /* line 102, sass/_notification.scss */
   .notification-tool .tray a {
     margin-left: 20px;
     padding: 0 10px;
     display: block;
     float: right;
     background-color: #e31936;
-    color: #fff; }
-    /* line 102, sass/_notification.scss */
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold; }
+    /* line 111, sass/_notification.scss */
     .notification-tool .tray a:hover {
       color: #000000; }
-/* line 108, sass/_notification.scss */
+/* line 117, sass/_notification.scss */
 .notification-tool .name {
   font-weight: bold; }
-/* line 113, sass/_notification.scss */
+/* line 122, sass/_notification.scss */
 .notification-tool .mask {
   position: fixed;
   left: 0;
@@ -394,10 +387,10 @@ a:active {
   cursor: pointer;
   z-index: 999;
   display: none; }
-/* line 129, sass/_notification.scss */
+/* line 138, sass/_notification.scss */
 .notification-tool.open .tray, .notification-tool.open .mask {
   display: block; }
-/* line 133, sass/_notification.scss */
+/* line 142, sass/_notification.scss */
 .notification-tool.open .tray {
   -webkit-transform-origin: 100% 0;
   -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }

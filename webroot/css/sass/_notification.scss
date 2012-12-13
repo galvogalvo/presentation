@@ -38,6 +38,14 @@
 			border-top: 9px solid $primaryColor;
 		}
 
+		&:hover {
+			background: $highlightColor;
+
+			&:after {
+				border-top-color: $highlightColor;
+			}
+		}
+
 	}
 
 	&.question-flag .comment {
@@ -97,7 +105,8 @@
 			display: block;
 			float: right;
 			background-color: $highlightColor;
-			color: #fff;
+			color: rgba(#ffffff, .8);
+			font-weight: bold;
 
 			&:hover {
 				color: #000000;

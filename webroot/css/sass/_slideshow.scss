@@ -9,7 +9,7 @@
 	margin: -320px 0 0 -512px;
 	width: 1024px;
 	height: 640px;
-	background: #000;
+	background: #000000;
 
 	& h1 {
 		font-size: 60px;
@@ -48,10 +48,11 @@
 		background: #ffffff;
 		position: absolute;
 		visibility: hidden;
+		-webkit-transform-origin: 50% 50%;
 
 		&.active {
 			visibility: visible;
-			-webkit-animation: slide $cssEasing 800ms forwards;
+			-webkit-animation: slide $cssEasing 400ms forwards;
 		}
 
 		& section {
@@ -74,27 +75,5 @@
 			width: 100%;
 			@include transform(translateX(-50%));
 		}
-	}
-
-	& .extra-slide {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-
-		z-index: 10000;
-		background: #000;
-		color: #fff;
-
-		display: none;
-	}
-
-	&.state-end .slideshow {
-		display: none;
-	}
-
-	&.state-end #end {
-		display: block;
 	}
 }
