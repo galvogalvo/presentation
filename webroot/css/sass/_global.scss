@@ -8,7 +8,7 @@ body {
 	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
 	color: $primaryColor;
-	background: #000;
+	background: #eee;
 }
 
 h1, h2, h3, strong {
@@ -16,9 +16,10 @@ h1, h2, h3, strong {
 }
 
 h1 {
-	font-size: 60px;
-	line-height: 60px;
-	letter-spacing: -2px;
+	font-size: 30px;
+	line-height: 30px;
+	letter-spacing: -1px;
+	margin: 0 0 30px;
 }
 
 h2 {
@@ -26,14 +27,11 @@ h2 {
 	margin-top: 25px;
 }
 
-header {
-	margin-bottom: 80px;
-}
 
 p {
-	font-size: 28px;
-	line-height: 38px;
-	margin-bottom: 28px;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 18px;
 }
 
 a {
@@ -54,20 +52,27 @@ a {
 }
 
 .logo {
-	position: absolute;
 	font-size: 16px;
 	font-weight: bold;
-	color: #ccc;
-	z-index: 3;
-	top: 20px;
-	left: 20px;
+	color: $primaryColor;
 	line-height: 12px;
+	text-align: center;
+	margin: 0 auto 30px;
+	display: block;
 
 	& i {
 		display: inline-block;
 		width: 12px;
 		height: 12px;
-		margin-right: 4px;
-		background: #ccc;
+		margin-right: 3px;
+		background: $highlightColor;
+	}
+
+	&.faded {
+		color: $fadedColor;
+
+		& i {
+			background: $fadedColor;
+		}
 	}
 }

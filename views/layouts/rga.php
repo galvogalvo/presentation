@@ -1,28 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en_US"> <!--<![endif]-->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title><?php echo $pageTitle ?></title>
-	<?php
-	
-	if (isset($requiredCss)) {
-		foreach ($requiredCss as $css => $use) {
-			echo '<link rel="stylesheet" href="' . WWW_CSS_PATH . $css . '" type="text/css" media="all" charset="utf-8" />' . "\n";
-		}
-	}
-	
-	if (isset($requiredJsInHead)) {
-		foreach ($requiredJsInHead as $js => $use) {
-			echo '<script type="text/javascript" charset="utf-8" src="' . WWW_JS_PATH . $js . '"></script>' . "\n";
-		}
-	}
-	
-	?>
 
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<title>cloudDeck - A Better Way To Present</title>
+
+	<script src="/js/libs/modernizr-2.5.3.min.js"></script>
+	<link rel="stylesheet" media="screen" href="/css/all.css">
 </head>
+
 <body>
 
-	<div id="content">
+	<div id="content" class="content public-page">
+		<span class="logo"><i></i> R/GA</span>
 		<?php echo $layoutContent ?>
 	</div>
 
@@ -33,6 +30,8 @@
 		}
 	}
 	?>
-	
+
+	<script src="/js/libs/jquery-1.8.3.min.js"></script>
+
 </body>
 </html>
