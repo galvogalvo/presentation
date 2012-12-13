@@ -80,6 +80,8 @@ cloudDeck.App = (function() {
 				_this.requestAsk();
 			});
 
+			$('.poll-results').hide();
+
 			$('.poll-button').on('click', function(aeEvent){
 				aeEvent.preventDefault();
 				_this.requestAnswerPoll($(this).attr('data-poll-value'));
@@ -92,7 +94,7 @@ cloudDeck.App = (function() {
 		});
 
 		this.channel.bind('voted', function(aoData) {
-			console.log(aoData.vote);
+			_this.updatePoll(aoData);
 		});
 
 		return this;
@@ -149,6 +151,15 @@ cloudDeck.App = (function() {
 		$.getJSON('/slide/answerPoll?id=' + this.slideshowId + '&vote=' + abVote)
 			.success(function(aoData){ console.log('poll success', aoData); })
 			.error(function(){ console.log('poll error'); });
+	}
+
+	AppProto.updatePoll = function(aoData)
+	{
+		$('.poll-button').hide();
+		$('.poll-results').show();
+
+		$('.result-no span').text(aoData.no);
+		$('.result-yes span').text(aoData.yes);
 	}
 
 	return App;

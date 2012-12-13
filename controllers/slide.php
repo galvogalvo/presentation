@@ -8,6 +8,9 @@ class SlideController extends AppController
 		$this->key = '20431aa4f88c671606eb';
 		$this->secret = 'fff03425c9a626f9a9ae';
 		$this->app_id = 33511;
+
+		$this->totalYes = 0;
+		$this->totalNo = 0;
 	}
 
 	public function actionView(){
@@ -65,7 +68,17 @@ class SlideController extends AppController
 
 	public function actionAnswerPoll(){
 		if(is_numeric($this->get['id']) && is_numeric($this->get['vote'])){
-			$data = array("vote"=>$this->get['vote'], "name"=>$_SESSION['name']);
+
+			if($this->get['vote'] == 0)
+			{
+				$this->totalNo = $this->totalNo + 1;
+			}
+			else if($this->get['vote'] == 1)
+			{
+				$this->totalYes = $this->totalYes + 1;
+			}
+
+			$data = array("yes"=>$this->totalYes, "no"=>$this->totalNo);
 			//echo $data;
 			$this->doEvent($this->get['id'], 'voted', $data);
 		}
