@@ -19,8 +19,12 @@ class SlideController extends AppController
 			$this->redirect($redirect);
 		}
 
+		error_log('id: '.$id);
+
 		$content = $this->getContent($id);
 
+		error_log('content'.$content);
+		
 		$this->setLayoutVar('presentationId', $id);
 		$this->setVar('presentationContent', $content);
 		$this->setLayout('slide');
@@ -56,6 +60,7 @@ class SlideController extends AppController
 	private function getContent($id){
 
 	$file = UPLOAD_DIR.$id.".html";
+	error_log('loading file:'.$file);
 
 		if(file_exists($file)){
 			$content = file_get_contents($file);
