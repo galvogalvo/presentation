@@ -91,3 +91,10 @@
 		 50% { -webkit-transform: scale(1.25); }
 		100% { -webkit-transform: scale(1); }
 	}
+
+	@-webkit-keyframes join {
+		  0% { opacity: 0; }
+		 10% { top: 0; opacity: 1; }
+		 75% { top: 0; opacity: 1; }
+		100% { top: 0; opacity: 0; }
+	}

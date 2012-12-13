@@ -72,15 +72,15 @@ cloudDeck.App = (function() {
 			_this.onGoToReceived(anPageNumber);
 		});
 
-		this.channel.bind('end', function(aoData) {
-			_this.onEndReceived(aoData);
-		});
-
 		return this;
 	}
 
 	AppProto.onJoinReceived = function(asName){
-		this.notificationTray.add('<span class="name">' + asName + '</span> just joined.');
+		var joined = $('<li><strong>' + asName + '</strong> just joined.</li>');
+		$('#join-notifications').append(joined);
+		setTimeout(function(){
+			joined.remove();
+		}, 10000);
 	}
 
 	AppProto.onStartReceived = function(aoData)
@@ -95,21 +95,10 @@ cloudDeck.App = (function() {
 		this.slideshow.goToSlide(anPageNumber);
 	}
 
-	AppProto.onEndReceived = function(aoData)
-	{
-		$('body').addClass('state-end');
-
-		this.slideshow.end();
-	}
-
 	AppProto.onAskReceived = function(aoData)
 	{
-		this.notificationTray.add('Question from <span class="name">' + aoData.name + '</span>. (slide: ' + aoData.slide + ')');
+		this.notificationTray.add('Question from <strong>' + aoData.name + '</strong>. (slide: ' + aoData.slide + ')');
 	}
-
-
-
-
 
 	AppProto.requestStart = function()
 	{
@@ -123,13 +112,6 @@ cloudDeck.App = (function() {
 		$.getJSON('/slide/goTo?id=' + this.slideshowId + '&slide=' + anPageNumber)
 			.success(function(aoData){ console.log('goTo success', aoData); })
 			.error(function(){ console.log('goTo error'); });
-	}
-
-	AppProto.requestEnd = function()
-	{
-		$.getJSON('/slide/end?id=' + this.slideshowId)
-			.success(function(aoData){ console.log('end success', aoData); })
-			.error(function(){ console.log('end error'); });
 	}
 
 	AppProto.requestAsk = function()
