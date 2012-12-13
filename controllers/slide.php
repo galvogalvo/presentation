@@ -9,23 +9,40 @@ class SlideController extends AppController
 		$this->app_id = 33511;
 	}
 
-	public function actionGo(){
+	public function actionGoTo(){
+		if(is_numeric($this->get['id']) && is_numeric($this->get['slide'])){
+			$this->doEvent($this->get['id'], 'goTo', $this->get['slide']);
+		}
+	}
+
+	public function actionStart(){
+		if(is_numeric($this->get['id'])){
+			$this->doEvent($this->get['id'], 'start');
+		}
+	}
+
+	public function actionEnd(){
+		if(is_numeric($this->get['id'])){
+			$this->doEvent($this->get['id'], 'end');
+		}
+	}
+
+	public function actionAsk(){
+		if(is_numeric($this->get['id']) && is_numeric($this->get['slide'])){
+			$this->doEvent($this->get['id'], 'ask', $this->get['slide']);
+		}
+	}
+
+	private function doEvent($id, $action, $slide=null){
 		
-		//print_r($_GET);
-
 		$result = 'false';
-		if(is_numeric($_GET['id']) && $this->validAction($_GET['action'])){ //valid slide
+		if(is_numeric($id) && $this->validAction($action)){ //valid slide
 
-			$slide = null;
-			if(is_numeric($_GET['slide'])){
-				$slide = $_GET['slide'];	
-			}
-			$channel = "slideshow-".$_GET['id'];
-			$action = $_GET['action'];
+			$channel = "slideshow-".$id;
 			$oPusher = new Pusher($this->key, $this->secret, $this->app_id);
 			$oPusher->trigger($channel, $action, $slide);
 
-			$result = 'true';
+			$result = json_encode(array('status'=>'true'));
 
 		}
 		
