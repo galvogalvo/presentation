@@ -268,13 +268,14 @@ a:active {
   .full .slide {
     background: #ffffff;
     position: absolute;
+    overflow: hidden;
     visibility: hidden;
     -webkit-transform-origin: 50% 50%; }
-    /* line 53, sass/_slideshow.scss */
+    /* line 54, sass/_slideshow.scss */
     .full .slide.active {
       visibility: visible;
       -webkit-animation: slide cubic-bezier(0.19, 1, 0.22, 1) 400ms forwards; }
-    /* line 58, sass/_slideshow.scss */
+    /* line 59, sass/_slideshow.scss */
     .full .slide section {
       padding: 80px 120px 0;
       width: 784px;
@@ -285,8 +286,9 @@ a:active {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 69, sass/_slideshow.scss */
+    /* line 70, sass/_slideshow.scss */
     .full .slide img, .full .slide video, .full .slide object, .full .slide iframe {
+      display: block;
       position: absolute;
       top: 0;
       left: 50%;
@@ -297,7 +299,7 @@ a:active {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-  /* line 79, sass/_slideshow.scss */
+  /* line 81, sass/_slideshow.scss */
   .full .slide-progress {
     position: absolute;
     left: 20px;
@@ -344,6 +346,11 @@ a:active {
   cursor: pointer;
   z-index: 1000; }
   /* line 46, sass/_notification.scss */
+  .touch .notification-tool .comment {
+    top: 20px;
+    padding: 20px 30px;
+    font-size: 35px; }
+  /* line 52, sass/_notification.scss */
   .notification-tool .comment:after {
     content: "";
     position: absolute;
@@ -354,17 +361,23 @@ a:active {
     border-left: 9px solid transparent;
     border-right: 0px solid transparent;
     border-top: 9px solid #261c02; }
-  /* line 58, sass/_notification.scss */
+    /* line 63, sass/_notification.scss */
+    .touch .notification-tool .comment:after {
+      display: none; }
+  /* line 68, sass/_notification.scss */
   .notification-tool .comment:hover {
     background: #e31936; }
-    /* line 61, sass/_notification.scss */
+    /* line 71, sass/_notification.scss */
     .notification-tool .comment:hover:after {
       border-top-color: #e31936; }
-/* line 68, sass/_notification.scss */
+/* line 78, sass/_notification.scss */
 .notification-tool.question-flag .comment {
   top: auto;
   bottom: 28px; }
-/* line 73, sass/_notification.scss */
+  /* line 82, sass/_notification.scss */
+  .touch .notification-tool.question-flag .comment {
+    bottom: 50px; }
+/* line 87, sass/_notification.scss */
 .notification-tool .number {
   position: absolute;
   top: -10px;
@@ -377,10 +390,10 @@ a:active {
   line-height: 20px;
   text-align: center;
   -webkit-transform: translate3d(0, 0, 0); }
-  /* line 88, sass/_notification.scss */
+  /* line 102, sass/_notification.scss */
   .notification-tool .number.new {
     -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }
-/* line 94, sass/_notification.scss */
+/* line 108, sass/_notification.scss */
 .notification-tool .tray {
   position: absolute;
   top: 20px;
@@ -388,7 +401,7 @@ a:active {
   font-size: 14px;
   z-index: 1001;
   display: none; }
-  /* line 104, sass/_notification.scss */
+  /* line 118, sass/_notification.scss */
   .notification-tool .tray li {
     margin-bottom: 5px;
     padding-left: 10px;
@@ -397,7 +410,7 @@ a:active {
     background: #fff;
     border-bottom: 3px solid #000;
     overflow: hidden; }
-  /* line 115, sass/_notification.scss */
+  /* line 129, sass/_notification.scss */
   .notification-tool .tray a {
     margin-left: 20px;
     padding: 0 10px;
@@ -406,10 +419,10 @@ a:active {
     background-color: #e31936;
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold; }
-    /* line 124, sass/_notification.scss */
+    /* line 138, sass/_notification.scss */
     .notification-tool .tray a:hover {
       color: #000000; }
-/* line 130, sass/_notification.scss */
+/* line 144, sass/_notification.scss */
 .notification-tool .mask {
   position: fixed;
   left: 0;
@@ -420,15 +433,15 @@ a:active {
   cursor: pointer;
   z-index: 999;
   display: none; }
-/* line 146, sass/_notification.scss */
+/* line 160, sass/_notification.scss */
 .notification-tool.open .tray, .notification-tool.open .mask {
   display: block; }
-/* line 150, sass/_notification.scss */
+/* line 164, sass/_notification.scss */
 .notification-tool.open .tray {
   -webkit-transform-origin: 100% 0;
   -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }
 
-/* line 159, sass/_notification.scss */
+/* line 173, sass/_notification.scss */
 .join-notifications li {
   position: absolute;
   top: -100px;
@@ -444,7 +457,7 @@ a:active {
   text-align: center;
   z-index: 1000;
   -webkit-animation: join 3s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
-/* line 178, sass/_notification.scss */
+/* line 192, sass/_notification.scss */
 .join-notifications strong {
   display: inline-block;
   max-width: 100px;

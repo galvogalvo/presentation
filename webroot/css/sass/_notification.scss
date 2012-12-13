@@ -43,6 +43,12 @@
 		cursor: pointer;
 		z-index: 1000;
 
+		.touch & {
+			top: 20px;
+			padding: 20px 30px;
+			font-size: 35px;
+		}
+
 		&:after {
 			content: "";
 			position: absolute;
@@ -53,6 +59,10 @@
 			border-left: 9px solid transparent;
 			border-right: 0px solid transparent;
 			border-top: 9px solid $primaryColor;
+
+			.touch & {
+				display: none;
+			}
 		}
 
 		&:hover {
@@ -68,6 +78,10 @@
 	&.question-flag .comment {
 		top: auto;
 		bottom: 28px;
+
+		.touch & {
+			bottom: 50px;
+		}
 	}
 
 	& .number {
