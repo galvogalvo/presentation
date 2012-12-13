@@ -17,11 +17,9 @@
 </head>
 
 
-<body class="list">
-
+<body class="full">
 
 	<section id="slideshow" class="slideshow">
-
 
 		<div class="slide cover" id="Cover">
 			<div>
@@ -33,7 +31,6 @@
 				</section>
 			</div>
 		</div>
-
 
 		<div class="slide" id="Header">
 			<div>
@@ -47,7 +44,6 @@
 			</div>
 		</div>
 
-
 		<div class="slide" id="TwoLinesHeader">
 			<div>
 				<section>
@@ -58,7 +54,6 @@
 				</section>
 			</div>
 		</div>
-
 
 		<div class="slide" id="ThankYou">
 			<div>
@@ -76,16 +71,6 @@
 				</section>
 			</div>
 		</div>
-
-		<!--
-			To hide progress bar from entire presentation
-			just remove “progress” element.
-			-->
-		<div class="progress">
-			<div></div>
-		</div>
-
-
 
 	</section> <!-- /. #slideshow -->
 
