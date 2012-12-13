@@ -1,3 +1,11 @@
 /**************************************************
 	POLL
 **************************************************/
+
+.leader .poll-button {
+	display: none;
+}
+
+.poll-result:after {
+	content: attr(data-result);
+}

@@ -57,6 +57,11 @@
 					<div class="poll">
 						<a class="poll-button" data-poll-value="1" href="#">YES</a>
 						<a class="poll-button" data-poll-value="0" href="#">NO</a>
+
+						<div id="results" class="poll-results">
+							<div data-result="YES" class="poll-result result-yes"><span></span></div>
+							<div data-result="NO" class="poll-result result-no"><span></span></div>
+						</div>
 					</div>
 				</section>
 			</div>
