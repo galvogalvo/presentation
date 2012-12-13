@@ -5,6 +5,7 @@ class UploadController extends AppController
 
 	function __construct(){
 		$this->setLayout('rga');
+		$this->uploadDir = "/uploads/";
 	}
 
 	public function actionUpload(){
@@ -16,18 +17,42 @@ class UploadController extends AppController
  					$input = file_get_contents($_FILES['input']['tmp_name']); 
 				}
 
-
-
 				$markdown = Markdown(trim($input));
-				$this->setVar('output', $markdown);
+
+				$filename = $this->getNextFilename();
+
+				file_put_contents($this->uploadDir.$filename, $markdown);
+
+				$this->setVar('url', "http://".$_SERVER['SERVER_NAME'].".".$filename);
+				$this->setVar('pin', 1234);
+
+				$this->loadView($this->controllerName . '/upload_result');	
 
 		} else {
-
 			$this->setVar('form_action', 'upload');
-
+			$this->loadView($this->controllerName . '/upload_action');	
 		}
 		
-		$this->loadView($this->controllerName . '/upload_action');	
+		
+	}
+
+	private function getNextFilename(){
+
+		$aIgnore = array(".","..");
+
+		$aLatest = array();
+		if ($handle = opendir($this->uploadDir)) {
+		    while (false !== ($entry = readdir($handle))) {
+		        if (!in_array($entry, $aIgnore)) {
+		        		$aLatest[] = $entry;
+		        }
+		    }
+		    closedir($handle);
+		}
+		
+		print_r($aLatest);
+		exit;
+
 	}
 
 
