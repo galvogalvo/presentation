@@ -526,8 +526,40 @@ dl dd {
   display: none; }
 
 /* line 9, sass/_poll.scss */
-.poll-result:after {
-  content: attr(data-result); }
+.poll-results {
+  overflow: hidden;
+  height: 300px; }
+  /* line 13, sass/_poll.scss */
+  .poll-results .poll-result {
+    float: left;
+    width: 30%;
+    margin: 0 10%;
+    height: 100%;
+    bottom: 45px;
+    text-align: center;
+    position: relative; }
+    /* line 22, sass/_poll.scss */
+    .poll-results .poll-result:after {
+      content: attr(data-result);
+      position: absolute;
+      font-weight: bold;
+      bottom: -40px;
+      width: 100%;
+      left: 0;
+      font-weight: 40px;
+      line-height: 40px; }
+    /* line 33, sass/_poll.scss */
+    .poll-results .poll-result span {
+      background: #e31936;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: block;
+      height: 60%; }
+    /* line 42, sass/_poll.scss */
+    .poll-results .poll-result:last-child span {
+      height: 40%;
+      background: #261c02; }
 
 /**************************************************
 	MOBILE
