@@ -21,7 +21,10 @@
 
 
 
+
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/libs/jquery.flexslider-min.js"></script>
 
 
 </body>
