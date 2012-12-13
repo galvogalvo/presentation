@@ -69,11 +69,11 @@ cloudDeck.NotificationTray = (function() {
 
 		if(this.currentCount == 0)
 		{
-			this.count.addClass('none');
+			this.toElement().addClass('no-notifications');
 		}
 		else
 		{
-			this.count.removeClass('none');
+			this.toElement().removeClass('no-notifications');
 		}
 
 		this.count.text(this.currentCount);
