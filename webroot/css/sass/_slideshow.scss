@@ -17,6 +17,7 @@
 
 		&.active {
 			visibility: visible;
+			-webkit-animation: slide $cssEasing 800ms forwards;
 		}
 
 		& section {
