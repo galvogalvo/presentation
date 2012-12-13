@@ -47,7 +47,9 @@ class SlideController extends AppController
 
 	public function actionAsk(){
 		if(is_numeric($this->get['id']) && is_numeric($this->get['slide'])){
-			$this->doEvent($this->get['id'], 'ask', $this->get['slide']);
+			$data = json_encode(array("slide"=>$this->get['slide'], "name"=>$_SESSION['name']));
+			//echo $data;
+			$this->doEvent($this->get['id'], 'ask', $data);
 		}
 	}
 
@@ -74,14 +76,14 @@ class SlideController extends AppController
 		return "OH NO, IT'S ALL GONE WRONG";
 	}
 
-	private function doEvent($id, $action, $slide=null){
+	private function doEvent($id, $action, $data=null){
 		
 		$result = 'false';
 		if(is_numeric($id) && $this->validAction($action)){ //valid slide
 
 			$channel = "slideshow-".$id;
 			$oPusher = new Pusher(PUSHER_KEY, PUSHER_SECRET, PUSHER_APP_ID);
-			$oPusher->trigger($channel, $action, $slide);
+			$oPusher->trigger($channel, $action, $data);
 
 			$result = json_encode(array('status'=>'true'));
 
