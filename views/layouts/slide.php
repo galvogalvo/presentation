@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=1274, user-scalable=no">
 
 
-	<title>cloudDeck - A Better Way To Present</title>
+	<title><?php echo $pageTitle ?></title>
 
 	<script src="/js/libs/modernizr-2.5.3.min.js"></script>
 	<link rel="stylesheet" media="screen" href="/css/all.css">
@@ -55,8 +55,8 @@
 						<h2>Please answer on your device.</h2>
 					</header>
 					<div class="poll">
-						<a class="poll-button" data-poll-value="1" href="#">YES</a>
-						<a class="poll-button" data-poll-value="0" href="#">NO</a>
+						<a class="poll-button poll-yes" data-poll-value="1" href="#">YES</a>
+						<a class="poll-button poll-no" data-poll-value="0" href="#">NO</a>
 
 						<div id="results" class="poll-results">
 							<div data-result="YES" class="poll-result result-yes"><span></span></div>

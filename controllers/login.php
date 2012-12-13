@@ -7,6 +7,7 @@ class LoginController extends AppController
 		$this->setLayout('rga');
 		$this->pin = 1234;
 		$this->leaderPin = 5678;
+		$this->setLayoutVar('pageTitle', PAGE_TITLE_DEFAULT);
 	}
 
 	public function actionLogin(){

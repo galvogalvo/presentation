@@ -7,6 +7,7 @@ class UploadController extends AppController
 	function __construct(){
 		$this->setLayout('rga');
 		$this->uploadDir = UPLOAD_DIR;
+		$this->pageTitle = PAGE_TITLE_DEFAULT;
 	}
 
 	public function actionUpload(){
@@ -40,10 +41,12 @@ class UploadController extends AppController
 				$this->setVar('shortUrl', $aShortUrl['url']);
 				$this->setVar('pin', 1234);
 
+				$this->setLayoutVar('pageTitle', $this->pageTitle." - upload success");
 				$this->loadView($this->controllerName . '/upload_result');	
 
 		} else {
 			$this->setVar('form_action', 'upload');
+			$this->setLayoutVar('pageTitle', $this->pageTitle." - upload");
 			$this->loadView($this->controllerName . '/upload_action');	
 		}
 		

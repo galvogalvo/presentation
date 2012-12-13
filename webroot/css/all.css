@@ -522,14 +522,33 @@ dl dd {
 	POLL
 **************************************************/
 /* line 5, sass/_poll.scss */
-.leader .poll-button {
-  display: none; }
+.poll-button {
+  display: block;
+  float: left;
+  width: 30%;
+  margin: 0 10%;
+  background: #e31936;
+  height: 100%;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 60px;
+  padding: 40px 0;
+  text-align: center; }
+  /* line 19, sass/_poll.scss */
+  .poll-button.poll-yes:hover {
+    color: #261c02; }
+  /* line 24, sass/_poll.scss */
+  .poll-button.poll-no {
+    background: #261c02; }
+  /* line 28, sass/_poll.scss */
+  .leader .poll-button {
+    display: none; }
 
-/* line 9, sass/_poll.scss */
+/* line 33, sass/_poll.scss */
 .poll-results {
   overflow: hidden;
   height: 300px; }
-  /* line 13, sass/_poll.scss */
+  /* line 37, sass/_poll.scss */
   .poll-results .poll-result {
     float: left;
     width: 30%;
@@ -538,7 +557,7 @@ dl dd {
     bottom: 45px;
     text-align: center;
     position: relative; }
-    /* line 22, sass/_poll.scss */
+    /* line 46, sass/_poll.scss */
     .poll-results .poll-result:after {
       content: attr(data-result);
       position: absolute;
@@ -548,7 +567,7 @@ dl dd {
       left: 0;
       font-weight: 40px;
       line-height: 40px; }
-    /* line 33, sass/_poll.scss */
+    /* line 57, sass/_poll.scss */
     .poll-results .poll-result span {
       background: #e31936;
       position: absolute;
@@ -556,8 +575,8 @@ dl dd {
       width: 100%;
       display: block;
       -webkit-transition: height 500ms cubic-bezier(0.19, 1, 0.22, 1); }
-    /* line 43, sass/_poll.scss */
-    .poll-results .poll-result:last-child span {
+    /* line 67, sass/_poll.scss */
+    .poll-results .poll-result.result-no span {
       background: #261c02; }
 
 /**************************************************
