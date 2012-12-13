@@ -47,7 +47,7 @@ class SlideController extends AppController
 
 	public function actionAsk(){
 		if(is_numeric($this->get['id']) && is_numeric($this->get['slide'])){
-			$data = json_encode(array("slide"=>$this->get['slide'], "name"=>$_SESSION['name']));
+			$data = array("slide"=>$this->get['slide'], "name"=>$_SESSION['name']);
 			//echo $data;
 			$this->doEvent($this->get['id'], 'ask', $data);
 		}
