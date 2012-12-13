@@ -24,6 +24,7 @@ cloudDeck.App = (function() {
 	AppProto.initialize = function()
 	{
 		this.slideshowId = $('body').attr('data-presentation-id');
+		this.isLeader = $('body').attr('data-is-leader');
 
 		// Realtime messaging
 		this.pusher = new Pusher('20431aa4f88c671606eb');
@@ -40,35 +41,39 @@ cloudDeck.App = (function() {
 	{
 		var _this = this;
 
-		$('body').on('click', function(){
-			_this.requestGoTo(_this.slideshow.getCurrentSlide() + 1);
-		});
+		// Leader
+		if(this.isLeader == 'true')
+		{
+			$('body').on('click', function(){
+				_this.requestGoTo(_this.slideshow.getCurrentSlide() + 1);
+			});
 
-		$('.question-flag a').on('click', function(aeEvent){
-			aeEvent.preventDefault();
-			aeEvent.stopPropagation();
-			_this.requestAsk();
-		});
+			this.channel.bind('join', function(asName) {
+				_this.onJoinReceived(asName);
+			});
 
-		// Events
-		this.channel.bind('join', function(asName) {
-			_this.onJoinReceived(asName);
-		});
+			this.channel.bind('ask', function(aoData) {
+				_this.onAskReceived(aoData);
+			});
+		}
 
-		this.channel.bind('start', function(aoData) {
-			_this.onStartReceived(aoData);
-		});
+		// Viewer
+		else
+		{
+			$('.question-flag a').on('click', function(aeEvent){
+				aeEvent.preventDefault();
+				aeEvent.stopPropagation();
+				_this.requestAsk();
+			});
+		}
 
+		// Everyone
 		this.channel.bind('goTo', function(anPageNumber) {
 			_this.onGoToReceived(anPageNumber);
 		});
 
 		this.channel.bind('end', function(aoData) {
 			_this.onEndReceived(aoData);
-		});
-
-		this.channel.bind('ask', function(aoData) {
-			_this.onAskReceived(aoData);
 		});
 
 		return this;

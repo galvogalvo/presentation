@@ -16,7 +16,7 @@
 	<link rel="stylesheet" media="screen" href="/css/all.css">
 </head>
 
-<body class="full" data-presentation-id="<?php echo $presentationId; ?>" data-is-leader="<?php echo $isLeader; ?>">
+<body class="full<?php if($isLeader == 'true'){ echo ' leader'; } else { echo ' viewer'; } ?>" data-presentation-id="<?php echo $presentationId; ?>" data-is-leader="<?php echo $isLeader; ?>">
 
 	<div id="notification-tool" class="notification-tool">
 		<div class="comment">
