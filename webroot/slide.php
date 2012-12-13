@@ -7,7 +7,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=1274, user-scalable=no">
 
 
 	<title>R/GA Make Day 2012 - A Better Way To Present</title>
@@ -15,7 +15,82 @@
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
 	<link rel="stylesheet" media="screen" href="css/all.css">
 </head>
-<body>
+
+
+<body class="list">
+
+
+	<section id="slideshow" class="slideshow">
+
+
+		<div class="slide cover" id="Cover">
+			<div>
+				<section>
+					<header>
+						<h2>Shower Presentation Template</h2>
+					</header>
+					<img src="img/1.jpg" alt="">
+				</section>
+			</div>
+		</div>
+
+
+		<div class="slide" id="Header">
+			<div>
+				<section>
+					<header>
+						<h2>Header</h2>
+					</header>
+					<p>This <code>&lt;tool&gt;</code> is provided <strong>without</strong> warranty, guarantee, or much in the way of explanation. Note that use of this tool may or may not crash <em>your</em> browser.</p>
+					<p><a href="examples/index.htm" target="_blank">This link will be opened in the new tab</a></p>
+				</section>
+			</div>
+		</div>
+
+
+		<div class="slide" id="TwoLinesHeader">
+			<div>
+				<section>
+					<header>
+						<h2>Two rows.<br>Mighty heading</h2>
+					</header>
+					<p>This <code>&lt;tool&gt;</code> is provided <strong>without</strong> warranty, guarantee, or much in the way of explanation. Note that use of this tool may or may not crash <em>your</em> browser.</p>
+				</section>
+			</div>
+		</div>
+
+
+		<div class="slide" id="ThankYou">
+			<div>
+				<section>
+					<header>
+						<h2>Shower Presentation Template</h2>
+					</header>
+					<p>Vadim Makeev, Opera Software</p>
+					<ul>
+						<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
+						<li><a href="http://twitter.com/pepelsbey">twitter.com/pepelsbey</a></li>
+						<li><a href="mailto:pepelsbey@gmail.com">pepelsbey@gmail.com</a></li>
+					</ul>
+					<p>Shower: <a href="http://github.com/pepelsbey/shower">github.com/pepelsbey/shower</a></p>
+				</section>
+			</div>
+		</div>
+
+		<!--
+			To hide progress bar from entire presentation
+			just remove “progress” element.
+			-->
+		<div class="progress">
+			<div></div>
+		</div>
+
+
+
+	</section> <!-- /. #slideshow -->
+
+
+
 
 
 
@@ -29,3 +104,27 @@
 	<script src="js/script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
