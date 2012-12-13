@@ -18,6 +18,10 @@
 
 <body class="full">
 
+	<div id="notification-tray" class="notification-tray">
+		<span class="number">10</span>
+	</div>
+
 	<section id="slideshow" class="slideshow">
 
 		<span class="logo"><i></i>R/GA</span>
@@ -84,6 +88,7 @@
 
 	<script src="/js/rga.MicroEvent.js"></script>
 	<script src="/js/cloudDeck.SlideShow.js"></script>
+	<script src="/js/cloudDeck.NotificationTray.js"></script>
 	<script src="/js/cloudDeck.App.js"></script>
 
 	<script src="/js/script.js"></script>

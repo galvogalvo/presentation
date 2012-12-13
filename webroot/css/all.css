@@ -199,3 +199,28 @@ p {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
+
+/* line 2, sass/_notification.scss */
+.notification-tray {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 37px;
+  width: 40px;
+  z-index: 1000;
+  background: transparent url(../img/icon-comment.png) no-repeat; }
+
+/* line 14, sass/_notification.scss */
+.notification-tray .number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  height: 20px;
+  width: 20px;
+  background: #e31936;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px; }
