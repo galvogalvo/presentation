@@ -1,0 +1,75 @@
+/**************************************************
+	UTILS
+**************************************************/
+
+// @start DEFAULT VARIABLES
+
+	$baseFontSize: 18;
+	$fontStack: 'FrutigerLTW01-57Condens', Helvetica, Arial, sans-serif;
+	$fontStackBold: 'FrutigerLTW01-67BoldCn', Helvetica, Arial, sans-serif;
+
+	$primaryColor: #476c81;
+	$highlightColor: #8fcb05;
+	$mutedColor: #999999;
+	$overlayColor: #1f74b8;
+
+	$gradientTop: #ffffff;
+	$gradientBottom: #eeeeee;
+
+	$cssEasing: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+
+    $default-prefixes: webkit moz ms o;
+
+// @end DEFAULT VARIABLES
+
+
+// @start FUNCTIONS
+
+	@function em($target, $context: $baseFontSize) {
+	    @return ($target / $context) * 1em;
+	}
+
+	@function rgbaColor($color, $opacity) {
+		@return rgba($color, $opacity);
+	}
+
+// @end FUNCTIONS
+
+// @start MIXINS
+
+	@mixin gradient($from, $to, $fallback: $from) {
+        background-color:$fallback;
+        background-image:       -webkit-gradient(linear, left 10%, left bottom, from($from), to($to));
+        background-image:-webkit-linear-gradient(10%, $from, $to);
+        background-image:   -moz-linear-gradient(10%, $from, $to);
+        background-image:    -ms-linear-gradient(10%, $from, $to);
+        background-image:     -o-linear-gradient(10%, $from, $to);
+        background:              linear-gradient(to left bottom, $from, $to);
+    }
+
+	@mixin build-prefix-values($property, $value, $prefixes: $default-prefixes) {
+		@each $prefix in $prefixes {
+		    -#{$prefix}-#{$property}: #{$value};
+		}
+		#{$property}: #{$value};
+	}
+
+	@mixin transition($property: all, $delay: 1s, $timing: linear) {
+		$value: $property $delay $timing;
+		// use default prefixes
+		@include build-prefix-values('transition', $value);
+	}
+
+	@mixin transform($value) {
+		// use default prefixes
+		@include build-prefix-values('transform', $value);
+	}
+
+	@mixin borderRadius($radius: 3) {
+		$value: $radius+px;
+		// use default prefixes
+		@include build-prefix-values('border-radius', $value);
+	}
+
+
+// @end MIXINS

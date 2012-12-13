@@ -1,0 +1,13 @@
+/**************************************************
+	GLOBAL
+**************************************************/
+body {
+	background: red;
+	font-family: $fontStack;
+	font-size: $baseFontSize+px;
+	text-align: center;
+	text-shadow: 0 1px rgbaColor(#ffffff, .3);
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	color: $primaryColor;
+}
