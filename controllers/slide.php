@@ -75,7 +75,20 @@ class SlideController extends AppController
 
 			$output = "";
 			foreach($aContent as $item){
-				$output .= "<div class='slide'><div><section><span class='logo-cd-small'></span><span class='logo faded'><i></i> R/GA</span>".$item."</section></div></div>";
+				//get basic content
+				$line = "<div><section><span class='logo-cd-small'></span><span class='logo faded'><i></i> R/GA</span>".$item."</section></div></div>";
+			
+				//check if there's an image (this is pretty dirty)
+				if(stristr($line, "<img") == true){
+					$class = "slide image";
+				} else {
+					$class = "slide";
+				}
+
+				$line = "<div class='".$class."'>".$line."</div>";
+				
+				//add to exisitng output
+				$output .= $line;
 			}
 			return $output;
 		}
