@@ -20,7 +20,7 @@
 
 	<section id="slideshow" class="slideshow">
 
-		<span class="logo faded"><i></i>R/GA</span>
+		<span class="logo faded"><i></i> R/GA</span>
 
 		<div class="slide cover" id="Cover">
 			<div>

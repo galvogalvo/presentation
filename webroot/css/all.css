@@ -166,12 +166,11 @@ a:active {
     display: inline-block;
     width: 12px;
     height: 12px;
-    margin-right: 3px;
     background: #e31936; }
-  /* line 71, sass/_global.scss */
+  /* line 70, sass/_global.scss */
   .logo.faded {
     color: #cccccc; }
-    /* line 74, sass/_global.scss */
+    /* line 73, sass/_global.scss */
     .logo.faded i {
       background: #cccccc; }
 
@@ -255,7 +254,7 @@ a:active {
   padding: 20px;
   background: #ffffff;
   border-radius: 1px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05); }
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.03); }
   /* line 12, sass/_public.scss */
   .public-page h1 {
     text-align: center; }
@@ -278,7 +277,7 @@ input {
     text-indent: 15px; }
   /* line 19, sass/_form.scss */
   input[type=file] {
-    border: none; }
+    padding: 0 0 12px; }
   /* line 23, sass/_form.scss */
   input[type=submit] {
     color: #261c02; }
