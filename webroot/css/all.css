@@ -280,11 +280,11 @@ a:active {
     background: #000;
     color: #fff;
     display: none; }
-  /* line 96, sass/_slideshow.scss */
-  .full.state-wait .slideshow, .full.state-wait #end, .full.state-end .slideshow, .full.state-end #wait {
+  /* line 93, sass/_slideshow.scss */
+  .full.state-end .slideshow {
     display: none; }
-  /* line 101, sass/_slideshow.scss */
-  .full.state-end #end, .full.state-wait #wait {
+  /* line 97, sass/_slideshow.scss */
+  .full.state-end #end {
     display: block; }
 
 /* line 5, sass/_notification.scss */

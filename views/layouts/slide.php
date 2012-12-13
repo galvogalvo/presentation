@@ -30,10 +30,22 @@
 		<a href="#" title="Flag for question">Flag for question</a>
 	</div>
 
-	<section id="wait" class="extra-slide"><h1>Wait</h1></section>
 	<section id="end" class="extra-slide"><h1>the End</h1></section>
 
 	<section id="slideshow" class="slideshow">
+
+		<div class='slide'>
+			<div>
+				<section>
+					<span class='logo-cd-small'></span>
+					<span class='logo faded'>
+						<i></i> R/GA
+					</span>
+
+					Waiting here...
+				</section>
+			</div>
+		</div>
 
 		<?php echo $layoutContent ?>
 

@@ -90,15 +90,11 @@
 		display: none;
 	}
 
-	&.state-wait .slideshow,
-	&.state-wait #end,
-	&.state-end .slideshow,
-	&.state-end #wait {
+	&.state-end .slideshow {
 		display: none;
 	}
 
-	&.state-end #end,
-	&.state-wait #wait {
+	&.state-end #end {
 		display: block;
 	}
 }

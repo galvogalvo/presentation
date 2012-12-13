@@ -33,8 +33,6 @@ cloudDeck.App = (function() {
 		this.slideshow = new cloudDeck.SlideShow($('#slideshow'));
 		this.notificationTray = new cloudDeck.NotificationTray($('#notification-tool'));
 
-		$('body').addClass('state-wait');
-
 		return this;
 	}
 
