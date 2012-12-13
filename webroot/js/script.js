@@ -22,7 +22,7 @@ Pusher.log = function(message) {
 			// var app = new take2.App();
 		}
 
-		//var app = new take2.App();
+		var app = new take2.App();
 
 	});
 
