@@ -32,65 +32,7 @@
 
 	<section id="slideshow" class="slideshow">
 
-		<span class="logo-cd-small"></span>
-		<span class="logo faded"><i></i> R/GA</span>
-
 		<?php echo $layoutContent ?>
-
-		<div class="slide" id="Cover">
-			<div>
-				<section>
-					<header>
-						<h1>Make Day <span class="highlight">/</span></h1>
-						<h2>TAKE 2</h2>
-					</header>
-					<p><strong>A Better Way To Present.</strong></p>
-					<p>Halloumipsum dolor sit amet, consectetur adipiscing elit. Middle East rhoncus urna, at semper turpis egestas et. Grilled scelerisque mollis ipsum, id gravida orci viverra sed. Sed sodales dictum ultrices. Etiam nec erat sed ante elementum accumsan nec sit amet nulla.</p>
-					<img src="/img/1.jpg" alt="">
-				</section>
-			</div>
-		</div>
-
-		<div class="slide" id="Header">
-			<div>
-				<section>
-					<header>
-						<h1>Header</h1>
-					</header>
-					<p>This <code>&lt;tool&gt;</code> is provided <strong>without</strong> warranty, guarantee, or much in the way of explanation. Note that use of this tool may or may not crash <em>your</em> browser.</p>
-					<p><a href="examples/index.htm" target="_blank">This link will be opened in the new tab</a></p>
-					<!-- <iframe src="http://www.youtube.com/embed/DvAlZMbqhsw" frameborder="0" allowfullscreen></iframe> -->
-				</section>
-			</div>
-		</div>
-
-		<div class="slide" id="TwoLinesHeader">
-			<div>
-				<section>
-					<header>
-						<h1>Two rows.<br>Mighty heading</h1>
-					</header>
-					<p>This <code>&lt;tool&gt;</code> is provided <strong>without</strong> warranty, guarantee, or much in the way of explanation. Note that use of this tool may or may not crash <em>your</em> browser.</p>
-				</section>
-			</div>
-		</div>
-
-		<div class="slide" id="ThankYou">
-			<div>
-				<section>
-					<header>
-						<h1>Shower Presentation Template</h1>
-					</header>
-					<p>Vadim Makeev, Opera Software</p>
-					<ul>
-						<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
-						<li><a href="http://twitter.com/pepelsbey">twitter.com/pepelsbey</a></li>
-						<li><a href="mailto:pepelsbey@gmail.com">pepelsbey@gmail.com</a></li>
-					</ul>
-					<p>Shower: <a href="http://github.com/pepelsbey/shower">github.com/pepelsbey/shower</a></p>
-				</section>
-			</div>
-		</div>
 
 	</section> <!-- /. #slideshow -->
 
