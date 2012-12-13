@@ -36,11 +36,11 @@
 			bottom: 0;
 			width: 100%;
 			display: block;
-			height: 60%;
+
+			-webkit-transition: height 500ms $cssEasing;
 		}
 
 		&:last-child span {
-			height: 40%;
 			background: $primaryColor;
 		}
 	}

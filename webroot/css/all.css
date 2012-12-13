@@ -555,10 +555,9 @@ dl dd {
       bottom: 0;
       width: 100%;
       display: block;
-      height: 60%; }
-    /* line 42, sass/_poll.scss */
+      -webkit-transition: height 500ms cubic-bezier(0.19, 1, 0.22, 1); }
+    /* line 43, sass/_poll.scss */
     .poll-results .poll-result:last-child span {
-      height: 40%;
       background: #261c02; }
 
 /**************************************************
