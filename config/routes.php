@@ -3,10 +3,10 @@
 // Format of regex => parseInfo
 $regexRoutes = array(
 	
-	// Map nothing to the home page.
+	// Map upload to the home page.
 	'#^$#' => array(
-		'controller' => 'page',
-		'action' => 'view',
+		'controller' => 'upload',
+		'action' => 'upload',
 		'action_params' => array(
 			'page_name' => 'home',
 		),
