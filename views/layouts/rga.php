@@ -19,7 +19,7 @@
 <body>
 
 	<div id="content" class="content public-page">
-		<span class="logo-cc"></span>
+		<span class="logo-cd"></span>
 		<span class="logo"><i></i> R/GA</span>
 		<?php echo $layoutContent ?>
 	</div>

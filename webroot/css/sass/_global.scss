@@ -76,11 +76,18 @@ a {
 	}
 }
 
-.logo-cc {
+.logo-cd,
+.logo-cd-small {
 	background: url('../img/sprite.png') 0 0 no-repeat;
 	display: block;
 	width: 101px;
 	height: 85px;
 	margin: 0 auto 15px;
 	text-align: center;
+}
+
+.logo-cd-small {
+	background-position: 0 -100px;
+	width: 61px;
+	height: 51px;
 }

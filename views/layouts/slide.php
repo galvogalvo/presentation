@@ -28,12 +28,12 @@
 
 	<section id="slideshow" class="slideshow">
 
-		<span class="logo-cd"></span>
+		<span class="logo-cd-small"></span>
 		<span class="logo faded"><i></i> R/GA</span>
 
 		<?php echo $layoutContent ?>
 
-		<div class="slide cover" id="Cover">
+		<div class="slide" id="Cover">
 			<div>
 				<section>
 					<header>
@@ -42,7 +42,7 @@
 					</header>
 					<p><strong>A Better Way To Present.</strong></p>
 					<p>Halloumipsum dolor sit amet, consectetur adipiscing elit. Middle East rhoncus urna, at semper turpis egestas et. Grilled scelerisque mollis ipsum, id gravida orci viverra sed. Sed sodales dictum ultrices. Etiam nec erat sed ante elementum accumsan nec sit amet nulla.</p>
-					<!-- <img src="/img/1.jpg" alt=""> -->
+					<img src="/img/1.jpg" alt="">
 				</section>
 			</div>
 		</div>

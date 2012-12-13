@@ -11,5 +11,6 @@
 		<dd><input type='text' name='name' required/></dd>
 	</dl>
 
+	<input type='hidden' name='id' value='<?php echo $id; ?>' />
 	<input type='submit' />
 </form>
