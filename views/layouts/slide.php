@@ -12,8 +12,8 @@
 
 	<title>R/GA Make Day 2012 - A Better Way To Present</title>
 
-	<script src="js/libs/modernizr-2.5.3.min.js"></script>
-	<link rel="stylesheet" media="screen" href="css/all.css">
+	<script src="/js/libs/modernizr-2.5.3.min.js"></script>
+	<link rel="stylesheet" media="screen" href="/css/all.css">
 </head>
 
 <body class="full">
@@ -31,7 +31,7 @@
 					</header>
 					<p><strong>A Better Way To Present.</strong></p>
 					<p>Halloumipsum dolor sit amet, consectetur adipiscing elit. Middle East rhoncus urna, at semper turpis egestas et. Grilled scelerisque mollis ipsum, id gravida orci viverra sed. Sed sodales dictum ultrices. Etiam nec erat sed ante elementum accumsan nec sit amet nulla.</p>
-					<!-- <img src="img/1.jpg" alt=""> -->
+					<!-- <img src="/img/1.jpg" alt=""> -->
 				</section>
 			</div>
 		</div>
@@ -80,12 +80,12 @@
 
 
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
-	<script src="js/libs/jquery-1.8.3.min.js"></script>
+	<script src="/js/libs/jquery-1.8.3.min.js"></script>
 
-	<script src="js/rga.MicroEvent.js"></script>
-	<script src="js/take2.SlideShow.js"></script>
-	<script src="js/take2.App.js"></script>
+	<script src="/js/rga.MicroEvent.js"></script>
+	<script src="/js/take2.SlideShow.js"></script>
+	<script src="/js/take2.App.js"></script>
 
-	<script src="js/script.js"></script>
+	<script src="/js/script.js"></script>
 </body>
 </html>
