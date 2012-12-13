@@ -3,3 +3,4 @@
 .sass-cache/*
 webroot/.sass-cache
 uploads/*.html
+votes/*.json
