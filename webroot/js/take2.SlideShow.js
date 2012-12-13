@@ -72,6 +72,11 @@ take2.SlideShow = (function() {
 		$(this.slides[this.currentSlide-1]).addClass('active');
 	}
 
+	SlideShowProto.getCurrentSlide = function()
+	{
+		return this.currentSlide;
+	}
+
 	SlideShowProto.toElement = function()
 	{
 		return this.container;

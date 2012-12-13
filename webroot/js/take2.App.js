@@ -25,8 +25,7 @@ take2.App = (function() {
 	{
 		// Realtime messaging
 		this.pusher = new Pusher('20431aa4f88c671606eb');
-		this.controlsChannel = this.pusher.subscribe('controls');
-		this.actionsChannel = this.pusher.subscribe('actions');
+		this.channel = this.pusher.subscribe('slideshow-1');
 
 		// Application Components
 		this.slideshow = new take2.SlideShow($('#slideshow'));
@@ -38,48 +37,83 @@ take2.App = (function() {
 	{
 		var _this = this;
 
+		$('body').on('click', function(){
+			console.log('sfkdsfkjshdk');
+			_this.requestGoTo(4);
+		})
+
 		// Controls
-
-		this.controlsChannel.bind('start', function(aoData) {
-			_this.onControlsStart(aoData);
+		this.channel.bind('start', function(aoData) {
+			_this.onStartReceived(aoData);
 		});
 
-		this.controlsChannel.bind('goTo', function(aoData) {
-			_this.onControlsGoTo(aoData);
+		this.channel.bind('goTo', function(anPageNumber) {
+			_this.onGoToReceived(anPageNumber);
 		});
 
-		this.controlsChannel.bind('end', function(aoData) {
-			_this.onControlsEnd(aoData);
+		this.channel.bind('end', function(aoData) {
+			_this.onEndReceived(aoData);
 		});
 
 
 		// Actions
-
-		this.actionsChannel.bind('ask', function(aoData) {
-			_this.onActionsAsk(aoData);
+		this.channel.bind('ask', function(aoData) {
+			_this.onAskReceived(aoData);
 		});
 
 		return this;
 	}
 
-	AppProto.onControlsStart = function(aoData)
+	AppProto.onStartReceived = function(aoData)
 	{
 		this.slideshow.start();
 	}
 
-	AppProto.onControlsGoTo = function(aoData)
+	AppProto.onGoToReceived = function(anPageNumber)
 	{
-		this.slideshow.goToSlide(aoData.page);
+		this.slideshow.goToSlide(anPageNumber);
 	}
 
-	AppProto.onControlsEnd = function(aoData)
+	AppProto.onEndReceived = function(aoData)
 	{
 		this.slideshow.end();
 	}
 
-	AppProto.onActionsAsk = function(aoData)
+	AppProto.onAskReceived = function(aoData)
 	{
 
+	}
+
+
+
+
+
+	AppProto.requestStart = function()
+	{
+		$.getJSON('/slide/start?id=1')
+			.success(function(aoData){ console.log('start success', aoData); })
+			.error(function(){ console.log('start error'); });
+	}
+
+	AppProto.requestGoTo = function(anPageNumber)
+	{
+		$.getJSON('/slide/goTo?id=1&slide=' + anPageNumber)
+			.success(function(aoData){ console.log('goTo success', aoData); })
+			.error(function(){ console.log('goTo error'); });
+	}
+
+	AppProto.requestEnd = function()
+	{
+		$.getJSON('/slide/end?id=1')
+			.success(function(aoData){ console.log('end success', aoData); })
+			.error(function(){ console.log('end error'); });
+	}
+
+	AppProto.requestAsk = function()
+	{
+		$.getJSON('/slide/ask?id=1&slide=' + this.slideshow.getCurrentSlide())
+			.success(function(aoData){ console.log('ask success', aoData); })
+			.error(function(){ console.log('ask error'); });
 	}
 
 	return App;
