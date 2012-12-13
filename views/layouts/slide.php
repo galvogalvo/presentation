@@ -38,12 +38,8 @@
 		<div class='slide'>
 			<div>
 				<section>
-					<span class='logo-cd-small'></span>
-					<span class='logo faded'>
-						<i></i> R/GA
-					</span>
-
-					Waiting here...
+					<span class='logo faded'><i></i> R/GA</span>
+					<img src="/img/wait.png">
 				</section>
 			</div>
 		</div>
@@ -53,12 +49,8 @@
 		<div class='slide'>
 			<div>
 				<section>
-					<span class='logo-cd-small'></span>
-					<span class='logo faded'>
-						<i></i> R/GA
-					</span>
-
-					This is the end.
+					<span class='logo faded'><i></i> R/GA</span>
+					<img src="/img/end.png">
 				</section>
 			</div>
 		</div>

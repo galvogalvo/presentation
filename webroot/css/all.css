@@ -292,7 +292,6 @@ a:active {
       left: 50%;
       z-index: -1;
       height: 100%;
-      width: 100%;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
