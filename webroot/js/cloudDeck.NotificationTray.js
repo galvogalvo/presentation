@@ -105,7 +105,7 @@ cloudDeck.NotificationTray = (function() {
 
 	NotificationTrayProto.open = function()
 	{
-		if(!this.count.hasClass('none'))
+		if(!this.toElement().hasClass('no-notifications'))
 		{
 			this.toElement().addClass('open').removeClass('close');
 		}

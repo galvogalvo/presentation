@@ -55,9 +55,7 @@
 			</div>
 		</div>
 
-		<div id="slide-progress" class="slide-progress">
-		<strong>01</strong> / 25
-	</div>
+		<div id="slide-progress" class="slide-progress"></div>
 
 	</section> <!-- /. #slideshow -->
 
