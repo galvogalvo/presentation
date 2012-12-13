@@ -157,8 +157,12 @@ cloudDeck.App = (function() {
 	{
 		$('.poll-button').hide();
 		$('.poll-results').show();
-
-		var totalUsers = 1;
+	
+		//console.log('data');
+		//console.log(aoData);
+		
+		var totalUsers = aoData.no+aoData.yes;
+		//console.log(totalUsers);
 
 		$('.result-no span').css('height', aoData.no/totalUsers * 100 + '%');
 		$('.result-yes span').css('height', aoData.yes/totalUsers * 100 + '%');

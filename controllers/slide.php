@@ -8,6 +8,7 @@ class SlideController extends AppController
 		$this->setLayoutVar('pageTitle', PAGE_TITLE_DEFAULT);
 		$this->totalYes = 0;
 		$this->totalNo = 0;
+		$this->votesDir = VOTES_DIR;
 
 	}
 
@@ -65,20 +66,39 @@ class SlideController extends AppController
 	}
 
 	public function actionAnswerPoll(){
+
 		if(is_numeric($this->get['id']) && is_numeric($this->get['vote'])){
+
+			//check if we have a vote dir
+			if(!is_dir($this->votesDir)){
+				mkdir($this->votesDir);
+			}
+
+			//check if there's a vote file
+			$path = $this->votesDir.$this->get['id'].".json";
+			if(file_exists($path)){ //get existing scores
+				$oVotes = json_decode(file_get_contents($path));
+				$aVotes = (array) $oVotes;
+			} else {
+				$aVotes = array("yes"=>0, "no"=>0);
+			}
+
+			//print_r($aVotes);	
 
 			if($this->get['vote'] == 0)
 			{
-				$this->totalNo = $this->totalNo + 1;
+				$aVotes['no'] = $aVotes['no']+1;
 			}
 			else if($this->get['vote'] == 1)
 			{
-				$this->totalYes = $this->totalYes + 1;
+				$aVotes['yes'] = $aVotes['yes']+1;
 			}
 
-			$data = array("yes"=>$this->totalYes, "no"=>$this->totalNo);
-			//echo $data;
-			$this->doEvent($this->get['id'], 'voted', $data);
+			//print_r($aVotes);
+
+			file_put_contents($path, json_encode($aVotes));
+
+			$this->doEvent($this->get['id'], 'voted', $aVotes);
 		}
 	}
 

@@ -29,6 +29,7 @@ class UploadController extends AppController
 					error_log('make upload dir');
 					mkdir($this->uploadDir);
 				}
+				
 				error_log('write path: '.$writePath);
 
 				$result = file_put_contents($writePath, $markdown);
