@@ -1,8 +1,6 @@
 /**************************************************
 	SLIDESHOW
 **************************************************/
-
-
 .full {
 	position: absolute;
 	top: 50%;
@@ -19,6 +17,7 @@
 
 		&.active {
 			visibility: visible;
+			-webkit-animation: slide $cssEasing 800ms forwards;
 		}
 
 		& section {
@@ -26,26 +25,19 @@
 			width: 776px;
 			height: 560px;
 			overflow: hidden;
-			-webkit-transform: scale(1);
-			-moz-transform: scale(1);
-			-ms-transform: scale(1);
-			-o-transform: scale(1);
-			transform: scale(1);
+			@include transform(scale(1));
 		}
 
-		img,
-		video,
-		object {
+		& img,
+		& svg,
+		& video,
+		& object {
 			position: absolute;
 			top: 0;
 			left: 50%;
 			z-index: -1;
 			height: 100%;
-			-webkit-transform: translateX(-50%);
-			-moz-transform: translateX(-50%);
-			-ms-transform: translateX(-50%);
-			-o-transform: translateX(-50%);
-			transform: translateX(-50%);
+			@include transform(translateX(-50%));
 		}
 	}
 }

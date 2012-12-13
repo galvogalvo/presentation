@@ -94,6 +94,17 @@ html[xmlns] .clearfix {
 /**************************************************
 	UTILS
 **************************************************/
+@-webkit-keyframes slide {
+  /* line 74, sass/_utils.scss */
+  0% {
+    visibility: visible;
+    opacity: 0; }
+
+  /* line 79, sass/_utils.scss */
+  100% {
+    visibility: visible;
+    opacity: 1; } }
+
 /**************************************************
 	GLOBAL
 **************************************************/
@@ -132,11 +143,19 @@ p {
   line-height: 38px;
   margin-bottom: 28px; }
 
-/* line 40, sass/_global.scss */
+/* line 43, sass/_global.scss */
+a, a:visited, a:hover {
+  color: #e31936;
+  text-decoration: none; }
+/* line 48, sass/_global.scss */
+a:active {
+  color: #261c02; }
+
+/* line 53, sass/_global.scss */
 .highlight {
   color: #e31936; }
 
-/* line 44, sass/_global.scss */
+/* line 57, sass/_global.scss */
 .logo {
   position: absolute;
   font-size: 16px;
@@ -146,7 +165,7 @@ p {
   top: 20px;
   left: 20px;
   line-height: 12px; }
-  /* line 54, sass/_global.scss */
+  /* line 67, sass/_global.scss */
   .logo i {
     display: inline-block;
     width: 12px;
@@ -157,7 +176,7 @@ p {
 /**************************************************
 	SLIDESHOW
 **************************************************/
-/* line 6, sass/_slideshow.scss */
+/* line 4, sass/_slideshow.scss */
 .full {
   position: absolute;
   top: 50%;
@@ -166,15 +185,16 @@ p {
   margin: -320px 0 0 -512px;
   width: 1024px;
   height: 640px; }
-  /* line 15, sass/_slideshow.scss */
+  /* line 13, sass/_slideshow.scss */
   .full .slide {
     background: #ffffff;
     position: absolute;
     visibility: hidden; }
-    /* line 20, sass/_slideshow.scss */
+    /* line 18, sass/_slideshow.scss */
     .full .slide.active {
-      visibility: visible; }
-    /* line 24, sass/_slideshow.scss */
+      visibility: visible;
+      -webkit-animation: slide cubic-bezier(0.19, 1, 0.22, 1) 800ms forwards; }
+    /* line 23, sass/_slideshow.scss */
     .full .slide section {
       padding: 80px 120px 0;
       width: 776px;
@@ -185,10 +205,8 @@ p {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 38, sass/_slideshow.scss */
-    .full .slide img,
-    .full .slide video,
-    .full .slide object {
+    /* line 34, sass/_slideshow.scss */
+    .full .slide img, .full .slide svg, .full .slide video, .full .slide object {
       position: absolute;
       top: 0;
       left: 50%;

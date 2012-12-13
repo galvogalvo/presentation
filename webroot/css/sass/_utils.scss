@@ -67,3 +67,17 @@
 
 
 // @end MIXINS
+
+// @start CSS Animation
+
+	@-webkit-keyframes slide {
+		0% {
+			visibility: visible;
+			opacity: 0;
+		}
+
+		100% {
+			visibility: visible;
+			opacity: 1;
+		}
+	}

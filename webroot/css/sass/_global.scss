@@ -37,6 +37,19 @@ p {
 	margin-bottom: 28px;
 }
 
+a {
+	&,
+	&:visited,
+	&:hover {
+		color: $highlightColor;
+		text-decoration: none;
+	}
+
+	&:active {
+		color: $primaryColor;
+	}
+}
+
 .highlight {
 	color: $highlightColor;
 }
