@@ -69,7 +69,7 @@ class SlideController extends AppController
 
 			$output = "";
 			foreach($aContent as $item){
-				$output .= "<div class='slide'><div><section>".$item."</section></div></div>";
+				$output .= "<div class='slide'><div><section><span class='logo-cd-small'></span><span class='logo faded'><i></i> R/GA</span>".$item."</section></div></div>";
 			}
 			return $output;
 		}

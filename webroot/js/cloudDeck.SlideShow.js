@@ -77,6 +77,16 @@ cloudDeck.SlideShow = (function() {
 		return this.currentSlide;
 	}
 
+	SlideShowProto.start = function()
+	{
+		return this;
+	}
+
+	SlideShowProto.end = function()
+	{
+		return this;
+	}
+
 	SlideShowProto.toElement = function()
 	{
 		return this.container;

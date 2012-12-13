@@ -269,6 +269,23 @@ a:active {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
+  /* line 79, sass/_slideshow.scss */
+  .full .extra-slide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10000;
+    background: #000;
+    color: #fff;
+    display: none; }
+  /* line 96, sass/_slideshow.scss */
+  .full.state-wait .slideshow, .full.state-wait #end, .full.state-end .slideshow, .full.state-end #wait {
+    display: none; }
+  /* line 101, sass/_slideshow.scss */
+  .full.state-end #end, .full.state-wait #wait {
+    display: block; }
 
 /* line 5, sass/_notification.scss */
 .notification-tool .comment {
