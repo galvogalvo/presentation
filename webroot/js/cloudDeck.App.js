@@ -33,6 +33,8 @@ cloudDeck.App = (function() {
 		this.slideshow = new cloudDeck.SlideShow($('#slideshow'));
 		this.notificationTray = new cloudDeck.NotificationTray($('#notification-tool'));
 
+		$('body').addClass('state-wait');
+
 		return this;
 	}
 
@@ -80,6 +82,8 @@ cloudDeck.App = (function() {
 
 	AppProto.onStartReceived = function(aoData)
 	{
+		$('body').removeClass('state-wait');
+
 		this.slideshow.start();
 	}
 
@@ -90,6 +94,8 @@ cloudDeck.App = (function() {
 
 	AppProto.onEndReceived = function(aoData)
 	{
+		$('body').addClass('state-end');
+
 		this.slideshow.end();
 	}
 

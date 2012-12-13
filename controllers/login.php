@@ -6,16 +6,22 @@ class LoginController extends AppController
 		session_start();
 		$this->setLayout('rga');
 		$this->pin = 1234;
+		$this->leaderPin = 5678;
 	}
 
 	public function actionLogin(){
 
 		//success
-		if(!empty($this->post['id']) && is_numeric($this->post['id']) && $this->post['pin'] == $this->pin){
+		if(!empty($this->post['id']) && is_numeric($this->post['id']) && ($this->post['pin'] == $this->pin || $this->post['pin'] == $this->leaderPin)){
 
 			$id = $this->post['id'];
 			$_SESSION['login'] = 1;
 			$_SESSION['name'] = $this->post['name'];
+			if($this->post['pin'] == $this->leaderPin){
+				$_SESSION['leader'] = 1;
+			} else {
+				$_SESSION['leader'] = 0;
+			}
 			$url = "/slide/view/".$id;
 
 			//send success to sockets

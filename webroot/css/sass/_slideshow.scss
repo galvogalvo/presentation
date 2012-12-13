@@ -75,4 +75,30 @@
 			@include transform(translateX(-50%));
 		}
 	}
+
+	& .extra-slide {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+
+		z-index: 10000;
+		background: #000;
+		color: #fff;
+
+		display: none;
+	}
+
+	&.state-wait .slideshow,
+	&.state-wait #end,
+	&.state-end .slideshow,
+	&.state-end #wait {
+		display: none;
+	}
+
+	&.state-end #end,
+	&.state-wait #wait {
+		display: block;
+	}
 }

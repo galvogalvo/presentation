@@ -22,7 +22,17 @@ class UploadController extends AppController
 
 				$filename = $this->getNextFilename();
 
-				file_put_contents($this->uploadDir.$filename.".html", $markdown);
+				$writePath = $this->uploadDir.$filename.".html";
+				
+				if(!is_dir($this->uploadDir)){
+					error_log('make upload dir');
+					mkdir($this->uploadDir);
+				}
+				error_log('write path: '.$writePath);
+
+				$result = file_put_contents($writePath, $markdown);
+
+				error_log('---result '.$result);
 
 				$url = "http://".$_SERVER['SERVER_NAME']."/slide/view/".$filename;
 				$aShortUrl = bitly_v3_shorten($url, 'j.mp');
@@ -53,7 +63,7 @@ class UploadController extends AppController
 		    }
 		    closedir($handle);
 		}
-
+		error_log('files'.print_r($aLatest, 1));
 		$count = count($aLatest)+1;
 		return $count ;
 	}

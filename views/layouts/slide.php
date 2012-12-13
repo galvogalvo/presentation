@@ -16,7 +16,7 @@
 	<link rel="stylesheet" media="screen" href="/css/all.css">
 </head>
 
-<body class="full" data-presentation-id="<?php echo $presentationId; ?>">
+<body class="full" data-presentation-id="<?php echo $presentationId; ?>" data-is-leader="<?php echo $isLeader; ?>">
 
 	<div id="notification-tool" class="notification-tool">
 		<div class="comment">
@@ -30,6 +30,9 @@
 	<div class="question-flag notification-tool">
 		<a href="#" title="Flag for question" class="comment">?</a>
 	</div>
+
+	<section id="wait" class="extra-slide"><h1>Wait</h1></section>
+	<section id="end" class="extra-slide"><h1>the End</h1></section>
 
 	<section id="slideshow" class="slideshow">
 
