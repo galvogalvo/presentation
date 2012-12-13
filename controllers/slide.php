@@ -11,7 +11,7 @@ class SlideController extends AppController
 
 	public function actionGo(){
 		
-		print_r($_GET);
+		//print_r($_GET);
 
 		$result = 'false';
 		if(is_numeric($_GET['id']) && $this->validAction($_GET['action'])){ //valid slide
@@ -20,7 +20,7 @@ class SlideController extends AppController
 			if(is_numeric($_GET['slide'])){
 				$slide = $_GET['slide'];	
 			}
-			$channel = "pres_".$_GET['id'];
+			$channel = "slideshow-".$_GET['id'];
 			$action = $_GET['action'];
 			$oPusher = new Pusher($this->key, $this->secret, $this->app_id);
 			$oPusher->trigger($channel, $action, $slide);
@@ -34,7 +34,7 @@ class SlideController extends AppController
 	}
 
 	private function validAction($action){
-		$aActions = array('start', 'end', 'slide', 'ask');
+		$aActions = array('start', 'end', 'goTo', 'ask');
 		if(in_array($action, $aActions)){
 			return true;
 		}
