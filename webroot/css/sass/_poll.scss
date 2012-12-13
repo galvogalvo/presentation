@@ -2,8 +2,32 @@
 	POLL
 **************************************************/
 
-.leader .poll-button {
-	display: none;
+.poll-button {
+	display: block;
+	float: left;
+	width: 30%;
+	margin: 0 10%;
+	background: $highlightColor;
+	height: 100%;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 60px;
+	padding: 40px 0;
+	text-align: center;
+
+	&.poll-yes {
+		&:hover {
+			color: $primaryColor;
+		}
+	}
+
+	&.poll-no {
+		background: $primaryColor;
+	}
+
+	.leader &{
+		display: none;
+	}
 }
 
 .poll-results {
@@ -39,7 +63,7 @@
 			height: 60%;
 		}
 
-		&:last-child span {
+		&.result-no span {
 			height: 40%;
 			background: $primaryColor;
 		}
