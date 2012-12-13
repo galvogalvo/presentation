@@ -1,8 +1,12 @@
 /**************************************************
 	GLOBAL
 **************************************************/
+body, html {
+	min-height: 100%;
+	overflow: hidden;
+}
+
 body {
-	background: red;
 	font-family: $fontStack;
 	font-size: $baseFontSize+px;
 	text-align: center;

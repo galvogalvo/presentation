@@ -13,7 +13,7 @@ take2.App = (function() {
 
 		this.initialize();
 
-		this.attach();
+		//this.attach();
 	}
 
 	// Inherit the MicroEvent class
@@ -23,9 +23,13 @@ take2.App = (function() {
 
 	AppProto.initialize = function()
 	{
+		// Realtime messaging
 		this.pusher = new Pusher('20431aa4f88c671606eb');
 		this.controlsChannel = this.pusher.subscribe('controls');
 		this.actionsChannel = this.pusher.subscribe('actions');
+
+		// Application Components
+		//this.slideshow = new take2.SlideShow($('#slideshow'));
 
 		return this;
 	}
@@ -40,12 +44,8 @@ take2.App = (function() {
 			_this.onControlsStart(aoData);
 		});
 
-		this.controlsChannel.bind('previous', function(aoData) {
+		this.controlsChannel.bind('show', function(aoData) {
 			_this.onControlsPrevious(aoData);
-		});
-
-		this.controlsChannel.bind('next', function(aoData) {
-			_this.onControlsNext(aoData);
 		});
 
 		this.controlsChannel.bind('end', function(aoData) {
@@ -64,22 +64,22 @@ take2.App = (function() {
 
 	AppProto.onControlsStart = function(aoData)
 	{
-
+		this.slideshow.start();
 	}
 
 	AppProto.onControlsPrevious = function(aoData)
 	{
-
+		this.slideshow.previous();
 	}
 
 	AppProto.onControlsNext = function(aoData)
 	{
-
+		this.slideshow.next();
 	}
 
 	AppProto.onControlsEnd = function(aoData)
 	{
-
+		this.slideshow.end();
 	}
 
 	AppProto.onActionsAsk = function(aoData)

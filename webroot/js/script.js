@@ -15,14 +15,7 @@ Pusher.log = function(message) {
 	// Dom ready
 	$(function(){
 
-		var hash = window.location.hash;
-
-		if(hash == '#presenter')
-		{
-			// var app = new take2.App();
-		}
-
-		//var app = new take2.App();
+		var app = new take2.App();
 
 	});
 
