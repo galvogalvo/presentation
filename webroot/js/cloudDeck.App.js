@@ -95,7 +95,7 @@ cloudDeck.App = (function() {
 
 	AppProto.onAskReceived = function(aoData)
 	{
-		this.notificationTray.add('Question from <span class="name">' + aoData.name + '</span> (slide: ' + aoData.slide + ').');
+		this.notificationTray.add('Question from <span class="name">' + aoData.name + '</span>. (slide: ' + aoData.slide + ')');
 	}
 
 
