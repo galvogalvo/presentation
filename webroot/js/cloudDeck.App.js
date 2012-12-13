@@ -46,6 +46,14 @@ cloudDeck.App = (function() {
 		// Leader
 		if(this.isLeader == 'true')
 		{
+			if(!$('body').hasClass('touch'))
+			{
+				$('body').swipe({
+					swipeLeft: function() { _this.requestGoTo(_this.slideshow.getCurrentSlide() - 1); },
+					swipeRight: function() { _this.requestGoTo(_this.slideshow.getCurrentSlide() + 1); },
+				});
+			}
+
 			$(document).on('keyup', function(aeEvent){
 
 				switch(aeEvent.keyCode)
