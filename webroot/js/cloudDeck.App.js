@@ -46,8 +46,14 @@ cloudDeck.App = (function() {
 		// Leader
 		if(this.isLeader == 'true')
 		{
-			$('body').on('click', function(){
-				_this.requestGoTo(_this.slideshow.getCurrentSlide() + 1);
+			$(document).on('keyup', function(aeEvent){
+
+				switch(aeEvent.keyCode)
+				{
+					case 37: _this.requestGoTo(_this.slideshow.getCurrentSlide() - 1); break;
+					case 39: _this.requestGoTo(_this.slideshow.getCurrentSlide() + 1); break;
+				}
+
 			});
 
 			this.channel.bind('join', function(asName) {
@@ -85,16 +91,9 @@ cloudDeck.App = (function() {
 		}, 10000);
 	}
 
-	AppProto.onStartReceived = function(aoData)
-	{
-		$('body').removeClass('state-wait');
-
-		this.slideshow.start();
-	}
-
 	AppProto.onGoToReceived = function(anPageNumber)
 	{
-		if(anPageNumber <= this.totalSlides + 1)
+		if((anPageNumber - 1) > 0 && anPageNumber <= this.totalSlides + 1)
 		{
 			$('#slide-progress').html('<strong>' + (anPageNumber - 1) + '</strong>/' + this.totalSlides);
 		}
@@ -111,18 +110,14 @@ cloudDeck.App = (function() {
 		this.notificationTray.add('Question from <strong>' + aoData.name + '</strong>. (slide ' + (aoData.slide - 1) + ')');
 	}
 
-	AppProto.requestStart = function()
-	{
-		$.getJSON('/slide/start?id=' + this.slideshowId)
-			.success(function(aoData){ console.log('start success', aoData); })
-			.error(function(){ console.log('start error'); });
-	}
-
 	AppProto.requestGoTo = function(anPageNumber)
 	{
-		$.getJSON('/slide/goTo?id=' + this.slideshowId + '&slide=' + anPageNumber)
-			.success(function(aoData){ console.log('goTo success', aoData); })
-			.error(function(){ console.log('goTo error'); });
+		if(anPageNumber > 0 && anPageNumber <= (this.totalSlides + 2))
+		{
+			$.getJSON('/slide/goTo?id=' + this.slideshowId + '&slide=' + anPageNumber)
+				.success(function(aoData){ console.log('goTo success', aoData); })
+				.error(function(){ console.log('goTo error'); });
+		}
 	}
 
 	AppProto.requestAsk = function()
