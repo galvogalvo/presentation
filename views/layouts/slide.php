@@ -29,7 +29,7 @@
 		<ul class="tray"></ul>
 	</div>
 
-	<div class="question-flag notification-tool">
+	<div class="question-flag notification-tool inactive">
 		<a href="#" title="Flag for question" class="comment">?</a>
 	</div>
 

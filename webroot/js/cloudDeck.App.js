@@ -49,8 +49,8 @@ cloudDeck.App = (function() {
 			if(!$('body').hasClass('touch'))
 			{
 				$('body').swipe({
-					swipeLeft: function() { _this.requestGoTo(_this.slideshow.getCurrentSlide() - 1); },
-					swipeRight: function() { _this.requestGoTo(_this.slideshow.getCurrentSlide() + 1); },
+					swipeLeft: function()  { _this.requestGoTo(_this.slideshow.getCurrentSlide() + 1); },
+					swipeRight: function() { _this.requestGoTo(_this.slideshow.getCurrentSlide() - 1); },
 				});
 			}
 
@@ -103,10 +103,12 @@ cloudDeck.App = (function() {
 	{
 		if((anPageNumber - 1) > 0 && anPageNumber <= this.totalSlides + 1)
 		{
+			$('.question-flag').removeClass('inactive');
 			$('#slide-progress').html('<strong>' + (anPageNumber - 1) + '</strong>/' + this.totalSlides);
 		}
 		else
 		{
+			$('.question-flag').addClass('inactive');
 			$('#slide-progress').html('');
 		}
 

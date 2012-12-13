@@ -3,7 +3,8 @@
 **************************************************/
 
 .viewer #notification-tool,
-.leader .question-flag {
+.leader .question-flag,
+.viewer .question-flag.inactive {
 	display: none;
 }
 
@@ -198,3 +199,4 @@
 	}
 
 }
+
