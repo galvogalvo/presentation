@@ -5,9 +5,56 @@
 body {
 	font-family: $fontStack;
 	font-size: $baseFontSize+px;
-	text-align: center;
-	text-shadow: 0 1px rgbaColor(#ffffff, .3);
+	text-align: left;
 	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
 	color: $primaryColor;
+}
+
+h1, h2, h3, strong {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 60px;
+	line-height: 60px;
+	letter-spacing: -2px;
+}
+
+h2 {
+	font-size: 36px;
+	margin-top: 25px;
+}
+
+header {
+	margin-bottom: 80px;
+}
+
+p {
+	font-size: 28px;
+	line-height: 38px;
+	margin-bottom: 28px;
+}
+
+.highlight {
+	color: $highlightColor;
+}
+
+.logo {
+	position: absolute;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ccc;
+	z-index: 3;
+	top: 20px;
+	left: 20px;
+	line-height: 12px;
+
+	& i {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		margin-right: 4px;
+		background: #ccc;
+	}
 }

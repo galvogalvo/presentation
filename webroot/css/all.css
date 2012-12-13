@@ -101,33 +101,73 @@ html[xmlns] .clearfix {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  text-align: center;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+  text-align: left;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   color: #261c02; }
+
+/* line 14, sass/_global.scss */
+h1, h2, h3, strong {
+  font-weight: bold; }
+
+/* line 18, sass/_global.scss */
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -2px; }
+
+/* line 24, sass/_global.scss */
+h2 {
+  font-size: 36px;
+  margin-top: 25px; }
+
+/* line 29, sass/_global.scss */
+header {
+  margin-bottom: 80px; }
+
+/* line 33, sass/_global.scss */
+p {
+  font-size: 28px;
+  line-height: 38px;
+  margin-bottom: 28px; }
+
+/* line 39, sass/_global.scss */
+.highlight {
+  color: #e31936; }
+
+/* line 43, sass/_global.scss */
+.logo {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ccc;
+  z-index: 3;
+  top: 20px;
+  left: 20px;
+  line-height: 12px; }
+  /* line 53, sass/_global.scss */
+  .logo i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    background: #ccc; }
 
 /**************************************************
 	SLIDESHOW
 **************************************************/
 /* line 5, sass/_slideshow.scss */
-.slide section {
-  padding: 80px 120px 0;
-  width: 784px;
-  height: 560px;
-  background: #FFF; }
+.slide {
+  background: #ffffff; }
+  /* line 8, sass/_slideshow.scss */
+  .slide section {
+    padding: 80px 120px 0;
+    width: 784px;
+    height: 560px;
+    overflow: hidden; }
 
 /* Cover */
-/* line 14, sass/_slideshow.scss */
-.slide.cover section {
-  background: #000;
-  overflow: hidden; }
-
-/* line 19, sass/_slideshow.scss */
-.slide.cover section:before {
-  display: none; }
-
-/* line 26, sass/_slideshow.scss */
+/* line 21, sass/_slideshow.scss */
 .slide.cover img,
 .slide.cover svg,
 .slide.cover video,
@@ -145,7 +185,7 @@ body {
 
 /* Full
 ---------------------------------------- */
-/* line 42, sass/_slideshow.scss */
+/* line 37, sass/_slideshow.scss */
 .full {
   position: absolute;
   top: 50%;
@@ -156,27 +196,27 @@ body {
   height: 640px;
   background: #000; }
 
-/* line 53, sass/_slideshow.scss */
+/* line 48, sass/_slideshow.scss */
 .full .caption {
   display: none; }
 
-/* line 57, sass/_slideshow.scss */
+/* line 52, sass/_slideshow.scss */
 .full .slide {
   position: absolute;
   visibility: hidden; }
 
-/* line 62, sass/_slideshow.scss */
+/* line 57, sass/_slideshow.scss */
 .full .slide.active {
   visibility: visible; }
 
-/* line 66, sass/_slideshow.scss */
+/* line 61, sass/_slideshow.scss */
 .full .slide:after {
   position: absolute;
   bottom: 85px;
   left: 120px;
   line-height: 1; }
 
-/* line 74, sass/_slideshow.scss */
+/* line 69, sass/_slideshow.scss */
 .full .slide section {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -184,7 +224,7 @@ body {
   -o-transform: scale(1);
   transform: scale(1); }
 
-/* line 87, sass/_slideshow.scss */
+/* line 82, sass/_slideshow.scss */
 .full .slide.cover:after,
 .full .slide.shout:after {
   content: ''; }

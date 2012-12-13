@@ -20,13 +20,18 @@
 
 	<section id="slideshow" class="slideshow">
 
+		<span class="logo"><i></i>R/GA</span>
+
 		<div class="slide cover" id="Cover">
 			<div>
 				<section>
 					<header>
-						<h2>Shower Presentation Template</h2>
+						<h1>Make Day <span class="highlight">/</span></h1>
+						<h2>TAKE 2</h2>
 					</header>
-					<img src="img/1.jpg" alt="">
+					<p><strong>A Better Way To Present.</strong></p>
+					<p>Halloumipsum dolor sit amet, consectetur adipiscing elit. Middle East rhoncus urna, at semper turpis egestas et. Grilled scelerisque mollis ipsum, id gravida orci viverra sed. Sed sodales dictum ultrices. Etiam nec erat sed ante elementum accumsan nec sit amet nulla.</p>
+					<!-- <img src="img/1.jpg" alt=""> -->
 				</section>
 			</div>
 		</div>
@@ -35,7 +40,7 @@
 			<div>
 				<section>
 					<header>
-						<h2>Header</h2>
+						<h1>Header</h1>
 					</header>
 					<p>This <code>&lt;tool&gt;</code> is provided <strong>without</strong> warranty, guarantee, or much in the way of explanation. Note that use of this tool may or may not crash <em>your</em> browser.</p>
 					<p><a href="examples/index.htm" target="_blank">This link will be opened in the new tab</a></p>
@@ -47,7 +52,7 @@
 			<div>
 				<section>
 					<header>
-						<h2>Two rows.<br>Mighty heading</h2>
+						<h1>Two rows.<br>Mighty heading</h1>
 					</header>
 					<p>This <code>&lt;tool&gt;</code> is provided <strong>without</strong> warranty, guarantee, or much in the way of explanation. Note that use of this tool may or may not crash <em>your</em> browser.</p>
 				</section>
@@ -58,7 +63,7 @@
 			<div>
 				<section>
 					<header>
-						<h2>Shower Presentation Template</h2>
+						<h1>Shower Presentation Template</h1>
 					</header>
 					<p>Vadim Makeev, Opera Software</p>
 					<ul>
