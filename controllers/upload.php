@@ -23,9 +23,11 @@ class UploadController extends AppController
 				$filename = $this->getNextFilename();
 
 				$writePath = $this->uploadDir.$filename.".html";
-				error_log('write path'.$writePath);
+				error_log('write path: '.$writePath);
 
-				file_put_contents($writePath, $markdown);
+				$result = file_put_contents($writePath, $markdown);
+
+				error_log('---result '.$result);
 
 				$url = "http://".$_SERVER['SERVER_NAME']."/slide/view/".$filename;
 				$aShortUrl = bitly_v3_shorten($url, 'j.mp');
