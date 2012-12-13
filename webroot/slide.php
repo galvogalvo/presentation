@@ -17,13 +17,13 @@
 </head>
 
 
-<body class="list">
+<body class="full" style="-webkit-transform: scale(1.0390625);">
 
 
 	<section id="slideshow" class="slideshow">
 
 
-		<div class="slide cover" id="Cover">
+		<div class="slide cover" id="Cover" style="visibility: visible;">
 			<div>
 				<section>
 					<header>
@@ -75,14 +75,6 @@
 					<p>Shower: <a href="http://github.com/pepelsbey/shower">github.com/pepelsbey/shower</a></p>
 				</section>
 			</div>
-		</div>
-
-		<!--
-			To hide progress bar from entire presentation
-			just remove “progress” element.
-			-->
-		<div class="progress">
-			<div></div>
 		</div>
 
 
