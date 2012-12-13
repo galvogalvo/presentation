@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=1274, user-scalable=no">
 
 
-	<title>cloudDeck - A Better Way To Present</title>
+	<title><?php echo $pageTitle ?></title>
 
 	<script src="/js/libs/modernizr-2.5.3.min.js"></script>
 	<link rel="stylesheet" media="screen" href="/css/all.css">

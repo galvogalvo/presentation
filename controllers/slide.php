@@ -5,9 +5,7 @@ class SlideController extends AppController
 	function __construct(){
 		session_start();
 		$this->setLayout(null);
-		$this->key = '20431aa4f88c671606eb';
-		$this->secret = 'fff03425c9a626f9a9ae';
-		$this->app_id = 33511;
+		$this->setLayoutVar('pageTitle', PAGE_TITLE_DEFAULT);
 	}
 
 	public function actionView(){
@@ -81,6 +79,8 @@ class SlideController extends AppController
 				//check if there's an image (this is pretty dirty)
 				if(stristr($line, "<img") == true){
 					$class = "slide image";
+				} else if(stristr($line, "youtube.com") == true){ 
+					$class = "slide video";
 				} else {
 					$class = "slide";
 				}
