@@ -99,7 +99,10 @@ cloudDeck.NotificationTray = (function() {
 
 	NotificationTrayProto.open = function()
 	{
-		this.toElement().addClass('open').removeClass('close');
+		if(!this.count.hasClass('none'))
+		{
+			this.toElement().addClass('open').removeClass('close');
+		}
 
 		return this;
 	}
