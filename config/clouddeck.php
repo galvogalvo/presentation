@@ -3,6 +3,8 @@ include(APP_PATH.'libs/pusher/Pusher.php');
 
 /* cloud deck config */
 define('UPLOAD_DIR', APP_PATH."uploads/");
+define('PAGE_TITLE_DEFAULT', "cloudDeck - A Better Way To Present");
+
 
 //pusher
 define('PUSHER_KEY', '20431aa4f88c671606eb');
