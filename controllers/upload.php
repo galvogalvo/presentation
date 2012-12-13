@@ -5,7 +5,7 @@ class UploadController extends AppController
 
 	function __construct(){
 		$this->setLayout('rga');
-		$this->uploadDir = "/uploads/";
+		$this->uploadDir = APP_PATH."/uploads/";
 	}
 
 	public function actionUpload(){
@@ -23,7 +23,7 @@ class UploadController extends AppController
 
 				file_put_contents($this->uploadDir.$filename, $markdown);
 
-				$this->setVar('url', "http://".$_SERVER['SERVER_NAME'].".".$filename);
+				$this->setVar('url', "http://".$_SERVER['SERVER_NAME']."/slide/view/".$filename);
 				$this->setVar('pin', 1234);
 
 				$this->loadView($this->controllerName . '/upload_result');	
@@ -49,10 +49,9 @@ class UploadController extends AppController
 		    }
 		    closedir($handle);
 		}
-		
-		print_r($aLatest);
-		exit;
 
+		$count = count($aLatest)+1;
+		return $count;
 	}
 
 
