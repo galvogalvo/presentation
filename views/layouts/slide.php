@@ -30,6 +30,9 @@
 		<a href="#" title="Flag for question">Flag for question</a>
 	</div>
 
+	<section id="wait" class="extra-slide"><h1>Wait</h1></section>
+	<section id="end" class="extra-slide"><h1>the End</h1></section>
+
 	<section id="slideshow" class="slideshow">
 
 		<?php echo $layoutContent ?>
