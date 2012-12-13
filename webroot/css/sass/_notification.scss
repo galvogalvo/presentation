@@ -2,6 +2,16 @@
 	NOTIFICATIONS
 **************************************************/
 
+.viewer #notification-tool,
+.leader .question-flag {
+	display: none;
+}
+
+.leader #notification-tool,
+.viewer .question-flag {
+	display: block;
+}
+
 .notification-tool {
 
 	& .comment {
