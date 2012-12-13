@@ -37,6 +37,11 @@ take2.App = (function() {
 	{
 		var _this = this;
 
+		$('body').on('click', function(){
+			console.log('sfkdsfkjshdk');
+			_this.requestGoTo(4);
+		})
+
 		// Controls
 		this.channel.bind('start', function(aoData) {
 			_this.onStartReceived(aoData);
@@ -77,6 +82,38 @@ take2.App = (function() {
 	AppProto.onAskReceived = function(aoData)
 	{
 
+	}
+
+
+
+
+
+	AppProto.requestStart = function()
+	{
+		$.getJSON('/slide/start?id=1')
+			.success(function(aoData){ console.log('start success', aoData); })
+			.error(function(){ console.log('start error'); });
+	}
+
+	AppProto.requestGoTo = function(anPageNumber)
+	{
+		$.getJSON('/slide/goTo?id=1&slide=' + anPageNumber)
+			.success(function(aoData){ console.log('goTo success', aoData); })
+			.error(function(){ console.log('goTo error'); });
+	}
+
+	AppProto.requestEnd = function()
+	{
+		$.getJSON('/slide/end?id=1')
+			.success(function(aoData){ console.log('end success', aoData); })
+			.error(function(){ console.log('end error'); });
+	}
+
+	AppProto.requestAsk = function()
+	{
+		$.getJSON('/slide/ask?id=1&slide=' + this.slideshow.getCurrentSlide())
+			.success(function(aoData){ console.log('ask success', aoData); })
+			.error(function(){ console.log('ask error'); });
 	}
 
 	return App;
