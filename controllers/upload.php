@@ -1,5 +1,6 @@
 <?php
 include('../libs/markdown/markdown.php');
+include('../libs/bitly/bitly.php');
 class UploadController extends AppController
 {
 
@@ -23,7 +24,10 @@ class UploadController extends AppController
 
 				file_put_contents($this->uploadDir.$filename, $markdown);
 
-				$this->setVar('url', "http://".$_SERVER['SERVER_NAME']."/slide/view/".$filename);
+				$url = "http://".$_SERVER['SERVER_NAME']."/slide/view/".$filename;
+				$aShortUrl = bitly_v3_shorten($url, 'j.mp');
+				$this->setVar('url', $url);
+				$this->setVar('shortUrl', $aShortUrl['url']);
 				$this->setVar('pin', 1234);
 
 				$this->loadView($this->controllerName . '/upload_result');	
@@ -51,7 +55,7 @@ class UploadController extends AppController
 		}
 
 		$count = count($aLatest)+1;
-		return $count;
+		return $count ;
 	}
 
 
