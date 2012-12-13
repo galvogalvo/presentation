@@ -67,7 +67,7 @@ cloudDeck.SlideShow = (function() {
 	{
 		$('.slide.active').removeClass('active');
 
-		this.currentSlide = anSlideNumber;
+		this.currentSlide = parseInt(anSlideNumber, 10);
 
 		$(this.slides[this.currentSlide-1]).addClass('active');
 	}
