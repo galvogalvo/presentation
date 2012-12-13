@@ -69,6 +69,8 @@
 	<script src="/js/cloudDeck.NotificationTray.js"></script>
 	<script src="/js/cloudDeck.App.js"></script>
 
+	<script src="/js/libs/jquery.swipe.js"></script>
+
 	<script src="/js/script.js"></script>
 </body>
 </html>
