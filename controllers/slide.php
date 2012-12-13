@@ -1,8 +1,9 @@
 <?php
-include('../libs/pusher/Pusher.php');
+
 class SlideController extends AppController
 {
 	function __construct(){
+		session_start();
 		$this->setLayout(null);
 		$this->key = '20431aa4f88c671606eb';
 		$this->secret = 'fff03425c9a626f9a9ae';
@@ -10,6 +11,12 @@ class SlideController extends AppController
 	}
 
 	public function actionView(){
+
+		if(!$_SESSION['login'] == 1){
+			$redirect = "/login/login?id=".$this->getPresentationIdFromUrl();
+			$this->redirect($redirect);
+		}
+
 		$this->setLayout('slide');
 		$this->loadView($this->controllerName . '/default');	
 	}
@@ -44,7 +51,7 @@ class SlideController extends AppController
 		if(is_numeric($id) && $this->validAction($action)){ //valid slide
 
 			$channel = "slideshow-".$id;
-			$oPusher = new Pusher($this->key, $this->secret, $this->app_id);
+			$oPusher = new Pusher(PUSHER_KEY, PUSHER_SECRET, PUSHER_APP_ID);
 			$oPusher->trigger($channel, $action, $slide);
 
 			$result = json_encode(array('status'=>'true'));
@@ -59,6 +66,15 @@ class SlideController extends AppController
 		$aActions = array('start', 'end', 'goTo', 'ask');
 		if(in_array($action, $aActions)){
 			return true;
+		}
+		return false;
+	}
+
+	private function getPresentationIdFromUrl(){
+		$aURL = explode("/", $_SERVER['REQUEST_URI']);
+		$id = array_pop($aURL);
+		if(is_numeric($id)){
+			return $id;
 		}
 		return false;
 	}

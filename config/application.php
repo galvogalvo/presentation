@@ -19,6 +19,9 @@ Lvc_Config::setViewClassName('AppView');
 include(APP_PATH . 'classes/AppController.class.php');
 include(APP_PATH . 'classes/AppView.class.php');
 include(dirname(__FILE__) . '/routes.php');
+include(dirname(__FILE__) . '/clouddeck.php');
+
+
 
 /* Enable the optional Autoloader and/or SimpleReflector helpers by uncommenting the following:
 // Setup Autoloader (http://anthonybush.com/projects/autoloader/)
