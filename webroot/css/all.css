@@ -181,6 +181,22 @@ a:active {
   bottom: 20px;
   z-index: 100; }
 
+/* line 88, sass/_global.scss */
+.logo-cd,
+.logo-cd-small {
+  background: url("../img/sprite.png") 0 0 no-repeat;
+  display: block;
+  width: 101px;
+  height: 85px;
+  margin: 0 auto 15px;
+  text-align: center; }
+
+/* line 97, sass/_global.scss */
+.logo-cd-small {
+  background-position: 0 -100px;
+  width: 61px;
+  height: 51px; }
+
 /**************************************************
 	SLIDESHOW
 **************************************************/
@@ -211,25 +227,28 @@ a:active {
     font-size: 28px;
     line-height: 38px;
     margin-bottom: 28px; }
-  /* line 35, sass/_slideshow.scss */
-  .full .logo {
+  /* line 36, sass/_slideshow.scss */
+  .full .logo, .full .logo-cd-small {
     position: absolute;
     z-index: 3;
     top: 20px;
     left: 20px; }
-  /* line 42, sass/_slideshow.scss */
+  /* line 43, sass/_slideshow.scss */
+  .full .logo-cd-small {
+    top: 81px; }
+  /* line 47, sass/_slideshow.scss */
   .full .slide {
     background: #ffffff;
     position: absolute;
     visibility: hidden; }
-    /* line 47, sass/_slideshow.scss */
+    /* line 52, sass/_slideshow.scss */
     .full .slide.active {
       visibility: visible;
       -webkit-animation: slide cubic-bezier(0.19, 1, 0.22, 1) 800ms forwards; }
-    /* line 52, sass/_slideshow.scss */
+    /* line 57, sass/_slideshow.scss */
     .full .slide section {
       padding: 80px 120px 0;
-      width: 776px;
+      width: 784px;
       height: 560px;
       overflow: hidden;
       -webkit-transform: scale(1);
@@ -237,7 +256,7 @@ a:active {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 63, sass/_slideshow.scss */
+    /* line 68, sass/_slideshow.scss */
     .full .slide img, .full .slide video, .full .slide object, .full .slide iframe {
       position: absolute;
       top: 0;

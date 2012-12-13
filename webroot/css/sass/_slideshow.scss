@@ -32,11 +32,16 @@
 		margin-bottom: 28px;
 	}
 
-	& .logo {
+	& .logo,
+	& .logo-cd-small {
 		position: absolute;
 		z-index: 3;
 		top: 20px;
 		left: 20px;
+	}
+
+	& .logo-cd-small {
+		top: 81px;
 	}
 
 	& .slide {
@@ -51,7 +56,7 @@
 
 		& section {
 			padding: 80px 120px 0;
-			width: 776px;
+			width: 784px;
 			height: 560px;
 			overflow: hidden;
 			@include transform(scale(1));
