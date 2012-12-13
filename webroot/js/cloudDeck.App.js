@@ -44,7 +44,17 @@ cloudDeck.App = (function() {
 			_this.requestGoTo(_this.slideshow.getCurrentSlide() + 1);
 		});
 
-		// Controls
+		$('.question-flag a').on('click', function(aeEvent){
+			aeEvent.preventDefault();
+			aeEvent.stopPropagation();
+			_this.requestAsk();
+		});
+
+		// Events
+		this.channel.bind('join', function(asName) {
+			_this.onJoinReceived(asName);
+		});
+
 		this.channel.bind('start', function(aoData) {
 			_this.onStartReceived(aoData);
 		});
@@ -57,13 +67,15 @@ cloudDeck.App = (function() {
 			_this.onEndReceived(aoData);
 		});
 
-
-		// Actions
 		this.channel.bind('ask', function(aoData) {
 			_this.onAskReceived(aoData);
 		});
 
 		return this;
+	}
+
+	AppProto.onJoinReceived = function(asName){
+		this.notificationTray.add('<span class="name">' + asName + '</span> just joined.');
 	}
 
 	AppProto.onStartReceived = function(aoData)
@@ -83,7 +95,7 @@ cloudDeck.App = (function() {
 
 	AppProto.onAskReceived = function(aoData)
 	{
-
+		this.notificationTray.add('Question from <span class="name">' + aoData.name + '</span>. (slide: ' + aoData.slide + ')');
 	}
 
 

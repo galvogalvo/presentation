@@ -174,7 +174,14 @@ a:active {
     .logo.faded i {
       background: #cccccc; }
 
-/* line 80, sass/_global.scss */
+/* line 79, sass/_global.scss */
+.question-flag {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100; }
+
+/* line 88, sass/_global.scss */
 .logo-cd,
 .logo-cd-small {
   background: url("../img/sprite.png") 0 0 no-repeat;
@@ -184,7 +191,7 @@ a:active {
   margin: 0 auto 15px;
   text-align: center; }
 
-/* line 89, sass/_global.scss */
+/* line 97, sass/_global.scss */
 .logo-cd-small {
   background-position: 0 -100px;
   width: 61px;

@@ -76,6 +76,14 @@ a {
 	}
 }
 
+.question-flag {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+
+	z-index: 100;
+}
+
 .logo-cd,
 .logo-cd-small {
 	background: url('../img/sprite.png') 0 0 no-repeat;

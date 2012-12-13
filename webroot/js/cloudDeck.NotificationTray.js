@@ -50,6 +50,7 @@ cloudDeck.NotificationTray = (function() {
 		});
 
 		this.toElement().on('click', '.dismiss-notification', function(aeEvent){
+			aeEvent.preventDefault();
 			aeEvent.stopPropagation();
 			_this.remove($(this).parent('li'));
 		});
@@ -95,6 +96,11 @@ cloudDeck.NotificationTray = (function() {
 	{
 		aoElement.remove();
 		this.updateCount(this.getCurrentCount() - 1);
+
+		if(this.currentCount == 0)
+		{
+			this.close();
+		}
 	}
 
 	NotificationTrayProto.open = function()
