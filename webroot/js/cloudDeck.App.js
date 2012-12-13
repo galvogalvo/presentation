@@ -55,13 +55,11 @@ cloudDeck.App = (function() {
 			}
 
 			$(document).on('keyup', function(aeEvent){
-
 				switch(aeEvent.keyCode)
 				{
 					case 37: _this.requestGoTo(_this.slideshow.getCurrentSlide() - 1); break;
 					case 39: _this.requestGoTo(_this.slideshow.getCurrentSlide() + 1); break;
 				}
-
 			});
 
 			this.channel.bind('join', function(asName) {
@@ -81,11 +79,20 @@ cloudDeck.App = (function() {
 				aeEvent.stopPropagation();
 				_this.requestAsk();
 			});
+
+			$('.poll-button').on('click', function(aeEvent){
+				aeEvent.preventDefault();
+				_this.requestAnswerPoll($(this).attr('data-poll-value'));
+			});
 		}
 
 		// Everyone
 		this.channel.bind('goTo', function(anPageNumber) {
 			_this.onGoToReceived(anPageNumber);
+		});
+
+		this.channel.bind('voted', function(aoData) {
+			console.log(aoData.vote);
 		});
 
 		return this;
@@ -135,6 +142,13 @@ cloudDeck.App = (function() {
 		$.getJSON('/slide/ask?id=' + this.slideshowId + '&slide=' + this.slideshow.getCurrentSlide())
 			.success(function(aoData){ console.log('ask success', aoData); })
 			.error(function(){ console.log('ask error'); });
+	}
+
+	AppProto.requestAnswerPoll = function(abVote)
+	{
+		$.getJSON('/slide/answerPoll?id=' + this.slideshowId + '&vote=' + abVote)
+			.success(function(aoData){ console.log('poll success', aoData); })
+			.error(function(){ console.log('poll error'); });
 	}
 
 	return App;

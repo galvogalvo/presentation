@@ -50,6 +50,22 @@
 			<div>
 				<section>
 					<span class='logo faded'><i></i> R/GA</span>
+					<header>
+						<h1>Is CloudDeck gonna win?</h1>
+						<h2>Please answer on your device.</h2>
+					</header>
+					<div class="poll">
+						<a class="poll-button" data-poll-value="1" href="#">YES</a>
+						<a class="poll-button" data-poll-value="0" href="#">NO</a>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<div class='slide'>
+			<div>
+				<section>
+					<span class='logo faded'><i></i> R/GA</span>
 					<img src="/img/end.png">
 				</section>
 			</div>
