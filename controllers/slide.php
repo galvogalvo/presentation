@@ -6,6 +6,9 @@ class SlideController extends AppController
 		session_start();
 		$this->setLayout(null);
 		$this->setLayoutVar('pageTitle', PAGE_TITLE_DEFAULT);
+		$this->totalYes = 0;
+		$this->totalNo = 0;
+
 	}
 
 	public function actionView(){
@@ -22,7 +25,7 @@ class SlideController extends AppController
 		$content = $this->getContent($id);
 
 		error_log('content'.$content);
-		
+
 		if($_SESSION['leader'] == 1){
 			$this->setLayoutVar('isLeader', 'true');
 		} else {
@@ -58,6 +61,24 @@ class SlideController extends AppController
 			$data = array("slide"=>$this->get['slide'], "name"=>$_SESSION['name']);
 			//echo $data;
 			$this->doEvent($this->get['id'], 'ask', $data);
+		}
+	}
+
+	public function actionAnswerPoll(){
+		if(is_numeric($this->get['id']) && is_numeric($this->get['vote'])){
+
+			if($this->get['vote'] == 0)
+			{
+				$this->totalNo = $this->totalNo + 1;
+			}
+			else if($this->get['vote'] == 1)
+			{
+				$this->totalYes = $this->totalYes + 1;
+			}
+
+			$data = array("yes"=>$this->totalYes, "no"=>$this->totalNo);
+			//echo $data;
+			$this->doEvent($this->get['id'], 'voted', $data);
 		}
 	}
 
@@ -117,7 +138,7 @@ class SlideController extends AppController
 	}
 
 	private function validAction($action){
-		$aActions = array('start', 'end', 'goTo', 'ask');
+		$aActions = array('start', 'end', 'goTo', 'ask', 'voted');
 		if(in_array($action, $aActions)){
 			return true;
 		}

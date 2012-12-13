@@ -69,11 +69,11 @@ cloudDeck.NotificationTray = (function() {
 
 		if(this.currentCount == 0)
 		{
-			this.count.addClass('none');
+			this.toElement().addClass('no-notifications');
 		}
 		else
 		{
-			this.count.removeClass('none');
+			this.toElement().removeClass('no-notifications');
 		}
 
 		this.count.text(this.currentCount);
@@ -105,7 +105,7 @@ cloudDeck.NotificationTray = (function() {
 
 	NotificationTrayProto.open = function()
 	{
-		if(!this.count.hasClass('none'))
+		if(!this.toElement().hasClass('no-notifications'))
 		{
 			this.toElement().addClass('open').removeClass('close');
 		}

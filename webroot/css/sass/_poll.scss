@@ -1,0 +1,47 @@
+/**************************************************
+	POLL
+**************************************************/
+
+.leader .poll-button {
+	display: none;
+}
+
+.poll-results {
+	overflow: hidden;
+	height: 300px;
+
+	& .poll-result {
+		float: left;
+		width: 30%;
+		margin: 0 10%;
+		height: 100%;
+		bottom: 45px;
+		text-align: center;
+		position: relative;
+
+		&:after{
+			content: attr(data-result);
+			position: absolute;
+			font-weight: bold;
+			bottom: -40px;
+			width: 100%;
+			left: 0;
+			font-weight: 40px;
+			line-height: 40px;
+		}
+
+		& span {
+			background: $highlightColor;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			display: block;
+			height: 60%;
+		}
+
+		&:last-child span {
+			height: 40%;
+			background: $primaryColor;
+		}
+	}
+}

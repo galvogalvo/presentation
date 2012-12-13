@@ -16,28 +16,70 @@
 	<link rel="stylesheet" media="screen" href="/css/all.css">
 </head>
 
-<body class="full" data-presentation-id="<?php echo $presentationId; ?>" data-is-leader="<?php echo $isLeader; ?>">
+<body class="full<?php if($isLeader == 'true'){ echo ' leader'; } else { echo ' viewer'; } ?>" data-presentation-id="<?php echo $presentationId; ?>" data-is-leader="<?php echo $isLeader; ?>">
 
-	<div id="notification-tool" class="notification-tool">
+	<ul id="join-notifications" class="join-notifications"></ul>
+
+	<div id="notification-tool" class="notification-tool no-notifications">
 		<div class="comment">
+			?
 			<span class="number none">0</span>
 		</div>
 		<div class="mask"></div>
 		<ul class="tray"></ul>
 	</div>
 
-	<div class="question-flag">
-		<a href="#" title="Flag for question">Flag for question</a>
+	<div class="question-flag notification-tool inactive">
+		<a href="#" title="Flag for question" class="comment">?</a>
 	</div>
-
-	<section id="wait" class="extra-slide"><h1>Wait</h1></section>
-	<section id="end" class="extra-slide"><h1>the End</h1></section>
 
 	<section id="slideshow" class="slideshow">
 
+		<div class='slide'>
+			<div>
+				<section>
+					<span class='logo faded'><i></i> R/GA</span>
+					<img src="/img/wait.png">
+				</section>
+			</div>
+		</div>
+
 		<?php echo $layoutContent ?>
 
+		<div class='slide'>
+			<div>
+				<section>
+					<span class='logo faded'><i></i> R/GA</span>
+					<header>
+						<h1>Is CloudDeck gonna win?</h1>
+						<h2>Please answer on your device.</h2>
+					</header>
+					<div class="poll">
+						<a class="poll-button" data-poll-value="1" href="#">YES</a>
+						<a class="poll-button" data-poll-value="0" href="#">NO</a>
+
+						<div id="results" class="poll-results">
+							<div data-result="YES" class="poll-result result-yes"><span></span></div>
+							<div data-result="NO" class="poll-result result-no"><span></span></div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<div class='slide'>
+			<div>
+				<section>
+					<span class='logo faded'><i></i> R/GA</span>
+					<img src="/img/end.png">
+				</section>
+			</div>
+		</div>
+
+		<div id="slide-progress" class="slide-progress"></div>
+
 	</section> <!-- /. #slideshow -->
+
 
 
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
@@ -47,6 +89,8 @@
 	<script src="/js/cloudDeck.SlideShow.js"></script>
 	<script src="/js/cloudDeck.NotificationTray.js"></script>
 	<script src="/js/cloudDeck.App.js"></script>
+
+	<script src="/js/libs/jquery.swipe.js"></script>
 
 	<script src="/js/script.js"></script>
 </body>

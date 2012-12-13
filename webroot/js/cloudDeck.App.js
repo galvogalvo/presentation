@@ -24,6 +24,7 @@ cloudDeck.App = (function() {
 	AppProto.initialize = function()
 	{
 		this.slideshowId = $('body').attr('data-presentation-id');
+		this.isLeader = $('body').attr('data-is-leader');
 
 		// Realtime messaging
 		this.pusher = new Pusher('20431aa4f88c671606eb');
@@ -33,7 +34,7 @@ cloudDeck.App = (function() {
 		this.slideshow = new cloudDeck.SlideShow($('#slideshow'));
 		this.notificationTray = new cloudDeck.NotificationTray($('#notification-tool'));
 
-		$('body').addClass('state-wait');
+		this.totalSlides = this.slideshow.getTotalSlides();
 
 		return this;
 	}
@@ -42,91 +43,100 @@ cloudDeck.App = (function() {
 	{
 		var _this = this;
 
-		$('body').on('click', function(){
-			_this.requestGoTo(_this.slideshow.getCurrentSlide() + 1);
-		});
+		// Leader
+		if(this.isLeader == 'true')
+		{
+			if(!$('body').hasClass('touch'))
+			{
+				$('body').swipe({
+					swipeLeft: function()  { _this.requestGoTo(_this.slideshow.getCurrentSlide() + 1); },
+					swipeRight: function() { _this.requestGoTo(_this.slideshow.getCurrentSlide() - 1); },
+				});
+			}
 
-		$('.question-flag a').on('click', function(aeEvent){
-			aeEvent.preventDefault();
-			aeEvent.stopPropagation();
-			_this.requestAsk();
-		});
+			$(document).on('keyup', function(aeEvent){
+				switch(aeEvent.keyCode)
+				{
+					case 37: _this.requestGoTo(_this.slideshow.getCurrentSlide() - 1); break;
+					case 39: _this.requestGoTo(_this.slideshow.getCurrentSlide() + 1); break;
+				}
+			});
 
-		// Events
-		this.channel.bind('join', function(asName) {
-			_this.onJoinReceived(asName);
-		});
+			this.channel.bind('join', function(asName) {
+				_this.onJoinReceived(asName);
+			});
 
-		this.channel.bind('start', function(aoData) {
-			_this.onStartReceived(aoData);
-		});
+			this.channel.bind('ask', function(aoData) {
+				_this.onAskReceived(aoData);
+			});
+		}
 
+		// Viewer
+		else
+		{
+			$('.question-flag a').on('click', function(aeEvent){
+				aeEvent.preventDefault();
+				aeEvent.stopPropagation();
+				_this.requestAsk();
+			});
+
+			$('.poll-results').hide();
+
+			$('.poll-button').on('click', function(aeEvent){
+				aeEvent.preventDefault();
+				_this.requestAnswerPoll($(this).attr('data-poll-value'));
+			});
+		}
+
+		// Everyone
 		this.channel.bind('goTo', function(anPageNumber) {
 			_this.onGoToReceived(anPageNumber);
 		});
 
-		this.channel.bind('end', function(aoData) {
-			_this.onEndReceived(aoData);
-		});
-
-		this.channel.bind('ask', function(aoData) {
-			_this.onAskReceived(aoData);
+		this.channel.bind('voted', function(aoData) {
+			_this.updatePoll(aoData);
 		});
 
 		return this;
 	}
 
 	AppProto.onJoinReceived = function(asName){
-		this.notificationTray.add('<span class="name">' + asName + '</span> just joined.');
-	}
-
-	AppProto.onStartReceived = function(aoData)
-	{
-		$('body').removeClass('state-wait');
-
-		this.slideshow.start();
+		var joined = $('<li><strong>' + asName + '</strong> just joined.</li>');
+		$('#join-notifications').append(joined);
+		setTimeout(function(){
+			joined.remove();
+		}, 10000);
 	}
 
 	AppProto.onGoToReceived = function(anPageNumber)
 	{
+		if((anPageNumber - 1) > 0 && anPageNumber <= this.totalSlides + 1)
+		{
+			$('.question-flag').removeClass('inactive');
+			$('#slide-progress').html('<strong>' + (anPageNumber - 1) + '</strong>/' + this.totalSlides);
+		}
+		else
+		{
+			$('.question-flag').addClass('inactive');
+			$('#slide-progress').html('');
+		}
+
 		this.slideshow.goToSlide(anPageNumber);
-	}
-
-	AppProto.onEndReceived = function(aoData)
-	{
-		$('body').addClass('state-end');
-
-		this.slideshow.end();
 	}
 
 	AppProto.onAskReceived = function(aoData)
 	{
-		this.notificationTray.add('Question from <span class="name">' + aoData.name + '</span>. (slide: ' + aoData.slide + ')');
-	}
-
-
-
-
-
-	AppProto.requestStart = function()
-	{
-		$.getJSON('/slide/start?id=' + this.slideshowId)
-			.success(function(aoData){ console.log('start success', aoData); })
-			.error(function(){ console.log('start error'); });
+		this.notificationTray.add('Question from <strong>' + aoData.name + '</strong>. (slide ' + (aoData.slide - 1) + ')');
 	}
 
 	AppProto.requestGoTo = function(anPageNumber)
 	{
-		$.getJSON('/slide/goTo?id=' + this.slideshowId + '&slide=' + anPageNumber)
-			.success(function(aoData){ console.log('goTo success', aoData); })
-			.error(function(){ console.log('goTo error'); });
-	}
-
-	AppProto.requestEnd = function()
-	{
-		$.getJSON('/slide/end?id=' + this.slideshowId)
-			.success(function(aoData){ console.log('end success', aoData); })
-			.error(function(){ console.log('end error'); });
+		if(anPageNumber > 0 && anPageNumber <= (this.totalSlides + 2))
+		{
+			$.getJSON('/slide/goTo?id=' + this.slideshowId + '&slide=' + anPageNumber)
+				.success(function(aoData){ console.log('goTo success', aoData); })
+				.error(function(){ console.log('goTo error'); });
+		}
 	}
 
 	AppProto.requestAsk = function()
@@ -134,6 +144,22 @@ cloudDeck.App = (function() {
 		$.getJSON('/slide/ask?id=' + this.slideshowId + '&slide=' + this.slideshow.getCurrentSlide())
 			.success(function(aoData){ console.log('ask success', aoData); })
 			.error(function(){ console.log('ask error'); });
+	}
+
+	AppProto.requestAnswerPoll = function(abVote)
+	{
+		$.getJSON('/slide/answerPoll?id=' + this.slideshowId + '&vote=' + abVote)
+			.success(function(aoData){ console.log('poll success', aoData); })
+			.error(function(){ console.log('poll error'); });
+	}
+
+	AppProto.updatePoll = function(aoData)
+	{
+		$('.poll-button').hide();
+		$('.poll-results').show();
+
+		$('.result-no span').text(aoData.no);
+		$('.result-yes span').text(aoData.yes);
 	}
 
 	return App;

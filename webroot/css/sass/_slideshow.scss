@@ -9,7 +9,7 @@
 	margin: -320px 0 0 -512px;
 	width: 1024px;
 	height: 640px;
-	background: #000;
+	background: #000000;
 
 	& h1 {
 		font-size: 60px;
@@ -47,11 +47,13 @@
 	& .slide {
 		background: #ffffff;
 		position: absolute;
+		overflow: hidden;
 		visibility: hidden;
+		-webkit-transform-origin: 50% 50%;
 
 		&.active {
 			visibility: visible;
-			-webkit-animation: slide $cssEasing 800ms forwards;
+			-webkit-animation: slide $cssEasing 400ms forwards;
 		}
 
 		& section {
@@ -66,39 +68,21 @@
 		& video,
 		& object,
 		& iframe {
+			display: block;
 			position: absolute;
 			top: 0;
 			left: 50%;
 			z-index: -1;
 			height: 100%;
-			width: 100%;
 			@include transform(translateX(-50%));
 		}
 	}
 
-	& .extra-slide {
+	.slide-progress {
 		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-
-		z-index: 10000;
-		background: #000;
-		color: #fff;
-
-		display: none;
-	}
-
-	&.state-wait .slideshow,
-	&.state-wait #end,
-	&.state-end .slideshow,
-	&.state-end #wait {
-		display: none;
-	}
-
-	&.state-end #end,
-	&.state-wait #wait {
-		display: block;
+		left: 20px;
+		bottom: 20px;
+		font-size: 14px;
+		color: $fadedColor;
 	}
 }
