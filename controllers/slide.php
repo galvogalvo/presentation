@@ -9,6 +9,10 @@ class SlideController extends AppController
 		$this->app_id = 33511;
 	}
 
+	public function actionView(){
+		$this->setLayout('slide');
+	}
+
 	public function actionGoTo(){
 		if(is_numeric($this->get['id']) && is_numeric($this->get['slide'])){
 			$this->doEvent($this->get['id'], 'goTo', $this->get['slide']);
