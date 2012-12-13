@@ -16,7 +16,7 @@
 	<link rel="stylesheet" media="screen" href="/css/all.css">
 </head>
 
-<body class="full">
+<body class="full" data-presentaton-id="<?php echo $presentationId; ?>">
 
 	<div id="notification-tool" class="notification-tool">
 		<div class="comment">
