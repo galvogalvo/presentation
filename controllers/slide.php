@@ -55,7 +55,15 @@ class SlideController extends AppController
 	$file = UPLOAD_DIR.$id.".html";
 
 		if(file_exists($file)){
-			return file_get_contents($file);
+			$content = file_get_contents($file);
+			//explode on hr
+			$aContent = explode("<hr />", $content);
+
+			$output = "";
+			foreach($aContent as $item){
+				$output .= "<div class='slide'><div><section>".$item."</section></div></div>";					
+			}
+			return $output;
 		}
 
 		return $this->errorMessage();

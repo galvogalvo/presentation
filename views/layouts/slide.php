@@ -22,6 +22,8 @@
 
 		<span class="logo faded"><i></i>R/GA</span>
 
+		<?php echo $layoutContent ?>
+		
 		<div class="slide cover" id="Cover">
 			<div>
 				<section>
