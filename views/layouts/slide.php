@@ -18,6 +18,8 @@
 
 <body class="full<?php if($isLeader == 'true'){ echo ' leader'; } else { echo ' viewer'; } ?>" data-presentation-id="<?php echo $presentationId; ?>" data-is-leader="<?php echo $isLeader; ?>">
 
+	<ul id="join-notifications" class="join-notifications"></ul>
+
 	<div id="notification-tool" class="notification-tool">
 		<div class="comment">
 			?

@@ -120,6 +120,26 @@ html[xmlns] .clearfix {
   100% {
     -webkit-transform: scale(1); } }
 
+@-webkit-keyframes join {
+  /* line 96, sass/_utils.scss */
+  0% {
+    opacity: 0; }
+
+  /* line 97, sass/_utils.scss */
+  10% {
+    top: 0;
+    opacity: 1; }
+
+  /* line 98, sass/_utils.scss */
+  75% {
+    top: 0;
+    opacity: 1; }
+
+  /* line 99, sass/_utils.scss */
+  100% {
+    top: 0;
+    opacity: 0; } }
+
 /**************************************************
 	GLOBAL
 **************************************************/
@@ -374,9 +394,6 @@ a:active {
     .notification-tool .tray a:hover {
       color: #000000; }
 /* line 117, sass/_notification.scss */
-.notification-tool .name {
-  font-weight: bold; }
-/* line 122, sass/_notification.scss */
 .notification-tool .mask {
   position: fixed;
   left: 0;
@@ -387,13 +404,37 @@ a:active {
   cursor: pointer;
   z-index: 999;
   display: none; }
-/* line 138, sass/_notification.scss */
+/* line 133, sass/_notification.scss */
 .notification-tool.open .tray, .notification-tool.open .mask {
   display: block; }
-/* line 142, sass/_notification.scss */
+/* line 137, sass/_notification.scss */
 .notification-tool.open .tray {
   -webkit-transform-origin: 100% 0;
   -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+/* line 146, sass/_notification.scss */
+.join-notifications li {
+  position: absolute;
+  top: -100px;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  overflow: hidden;
+  height: 23px;
+  line-height: 23px;
+  background: #eee;
+  border-bottom: 3px solid #000;
+  font-size: 14px;
+  text-align: center;
+  z-index: 1000;
+  -webkit-animation: join 3s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
+/* line 165, sass/_notification.scss */
+.join-notifications strong {
+  display: inline-block;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 /**************************************************
 	PUBLIC PAGES
