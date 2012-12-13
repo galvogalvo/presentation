@@ -11,7 +11,7 @@ class SlideController extends AppController
 
 	public function actionView(){
 		$this->setLayout('slide');
-		$this->loadView($this->controllerName . '/content');	
+		$this->loadView($this->controllerName . '/default');	
 	}
 
 	public function actionGoTo(){
