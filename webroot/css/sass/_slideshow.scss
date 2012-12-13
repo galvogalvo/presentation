@@ -59,7 +59,7 @@
 		visibility: hidden;
 	}
 
-		.full .slide:target {
+		.full .slide.active {
 			visibility: visible;
 		}
 

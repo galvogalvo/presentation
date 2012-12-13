@@ -16,14 +16,11 @@
 	<link rel="stylesheet" media="screen" href="css/all.css">
 </head>
 
-
-<body class="full" style="-webkit-transform: scale(1.0390625);">
-
+<body class="full">
 
 	<section id="slideshow" class="slideshow">
 
-
-		<div class="slide cover" id="Cover" style="visibility: visible;">
+		<div class="slide cover" id="Cover">
 			<div>
 				<section>
 					<header>
@@ -33,7 +30,6 @@
 				</section>
 			</div>
 		</div>
-
 
 		<div class="slide" id="Header">
 			<div>
@@ -47,7 +43,6 @@
 			</div>
 		</div>
 
-
 		<div class="slide" id="TwoLinesHeader">
 			<div>
 				<section>
@@ -58,7 +53,6 @@
 				</section>
 			</div>
 		</div>
-
 
 		<div class="slide" id="ThankYou">
 			<div>
@@ -77,13 +71,7 @@
 			</div>
 		</div>
 
-
-
 	</section> <!-- /. #slideshow -->
-
-
-
-
 
 
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>

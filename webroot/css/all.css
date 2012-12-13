@@ -166,7 +166,7 @@ body {
   visibility: hidden; }
 
 /* line 62, sass/_slideshow.scss */
-.full .slide:target {
+.full .slide.active {
   visibility: visible; }
 
 /* line 66, sass/_slideshow.scss */

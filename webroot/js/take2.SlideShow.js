@@ -25,12 +25,12 @@ take2.SlideShow = (function() {
 
 	SlideShowProto.initialize = function()
 	{
-		this.toElement().flexslider({
-			controlNav: false,
-			slideshow: false
-		});
+		this.applyTransform(this.getTransform());
 
-		this.positionSlideshow();
+		this.slides = this.toElement().find('.slide');
+		this.currentSlide = 1;
+
+		this.goToSlide(this.currentSlide);
 
 		return this;
 	}
@@ -39,44 +39,37 @@ take2.SlideShow = (function() {
 	{
 		var _this = this;
 
-		$(window).resize(function(){
-			_this.positionSlideshow();
+		$(window).on('resize', function(aeEvent) {
+			_this.applyTransform(_this.getTransform());
 		});
 	}
 
-	SlideShowProto.positionSlideshow = function()
+	SlideShowProto.getTransform = function()
 	{
-		var windowHeight = $(window).height();
+		var denominator = Math.max(
+			document.body.clientWidth / window.innerWidth,
+			document.body.clientHeight / window.innerHeight
+		);
 
-		this.toElement().find('.slide').css('height', windowHeight + 'px')
-
-		var slideshowHeight = this.toElement().height();
-
-		this.toElement().css({
-			'max-height': windowHeight + 'px',
-			'margin-top': -slideshowHeight / 2 + 'px'
-		})
+		return 'scale(' + (1 / denominator) + ')';
 	}
 
-	SlideShowProto.start = function()
+	SlideShowProto.applyTransform = function(asTransform)
 	{
-		console.log('slideshow: start');
-		return this;
+		document.body.style.WebkitTransform = asTransform;
+		   document.body.style.MozTransform = asTransform;
+		    document.body.style.msTransform = asTransform;
+		     document.body.style.OTransform = asTransform;
+		      document.body.style.transform = asTransform;
 	}
 
-	SlideShowProto.goTo = function()
+	SlideShowProto.goToSlide = function(anSlideNumber)
 	{
-		console.log('slideshow: next');
+		$('.slide.active').removeClass('active');
 
-		this.toElement().find('.flex-next').click();
+		this.currentSlide = anSlideNumber;
 
-		return this;
-	}
-
-	SlideShowProto.end = function()
-	{
-		console.log('slideshow: end');
-		return this;
+		$(this.slides[this.currentSlide-1]).addClass('active');
 	}
 
 	SlideShowProto.toElement = function()

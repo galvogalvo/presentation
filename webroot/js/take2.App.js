@@ -13,7 +13,7 @@ take2.App = (function() {
 
 		this.initialize();
 
-		//this.attach();
+		this.attach();
 	}
 
 	// Inherit the MicroEvent class
@@ -29,7 +29,7 @@ take2.App = (function() {
 		this.actionsChannel = this.pusher.subscribe('actions');
 
 		// Application Components
-		//this.slideshow = new take2.SlideShow($('#slideshow'));
+		this.slideshow = new take2.SlideShow($('#slideshow'));
 
 		return this;
 	}
@@ -44,8 +44,8 @@ take2.App = (function() {
 			_this.onControlsStart(aoData);
 		});
 
-		this.controlsChannel.bind('show', function(aoData) {
-			_this.onControlsPrevious(aoData);
+		this.controlsChannel.bind('goTo', function(aoData) {
+			_this.onControlsGoTo(aoData);
 		});
 
 		this.controlsChannel.bind('end', function(aoData) {
@@ -67,14 +67,9 @@ take2.App = (function() {
 		this.slideshow.start();
 	}
 
-	AppProto.onControlsPrevious = function(aoData)
+	AppProto.onControlsGoTo = function(aoData)
 	{
-		this.slideshow.previous();
-	}
-
-	AppProto.onControlsNext = function(aoData)
-	{
-		this.slideshow.next();
+		this.slideshow.goToSlide(aoData.page);
 	}
 
 	AppProto.onControlsEnd = function(aoData)
