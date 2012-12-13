@@ -77,6 +77,11 @@ cloudDeck.SlideShow = (function() {
 		return this.currentSlide;
 	}
 
+	SlideShowProto.getTotalSlides = function()
+	{
+		return this.slides.length - 2;
+	}
+
 	SlideShowProto.start = function()
 	{
 		return this;

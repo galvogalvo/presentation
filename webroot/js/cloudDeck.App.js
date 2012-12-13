@@ -34,6 +34,8 @@ cloudDeck.App = (function() {
 		this.slideshow = new cloudDeck.SlideShow($('#slideshow'));
 		this.notificationTray = new cloudDeck.NotificationTray($('#notification-tool'));
 
+		this.totalSlides = this.slideshow.getTotalSlides();
+
 		return this;
 	}
 
@@ -92,12 +94,21 @@ cloudDeck.App = (function() {
 
 	AppProto.onGoToReceived = function(anPageNumber)
 	{
+		if(anPageNumber <= this.totalSlides + 1)
+		{
+			$('#slide-progress').html('<strong>' + (anPageNumber - 1) + '</strong>/' + this.totalSlides);
+		}
+		else
+		{
+			$('#slide-progress').html('');
+		}
+
 		this.slideshow.goToSlide(anPageNumber);
 	}
 
 	AppProto.onAskReceived = function(aoData)
 	{
-		this.notificationTray.add('Question from <strong>' + aoData.name + '</strong>. (slide: ' + aoData.slide + ')');
+		this.notificationTray.add('Question from <strong>' + aoData.name + '</strong>. (slide ' + (aoData.slide - 1) + ')');
 	}
 
 	AppProto.requestStart = function()

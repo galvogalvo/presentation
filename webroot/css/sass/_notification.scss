@@ -14,6 +14,23 @@
 
 .notification-tool {
 
+	&.no-notifications .comment {
+		opacity: 0.2;
+		cursor: default;
+
+		&:hover {
+			background-color: $primaryColor;
+
+			&:after {
+				border-top-color: $primaryColor;
+			}
+		}
+	}
+
+	&.no-notifications .number {
+		display: none;
+	}
+
 	& .comment {
 		position: absolute;
 		top: 20px;
@@ -67,10 +84,6 @@
 		text-align: center;
 
 		-webkit-transform: translate3d(0, 0, 0);
-
-		&.none {
-			display: none;
-		}
 
 		&.new {
 			-webkit-animation: new-notification 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000);

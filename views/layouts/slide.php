@@ -20,7 +20,7 @@
 
 	<ul id="join-notifications" class="join-notifications"></ul>
 
-	<div id="notification-tool" class="notification-tool">
+	<div id="notification-tool" class="notification-tool no-notifications">
 		<div class="comment">
 			?
 			<span class="number none">0</span>
@@ -55,9 +55,7 @@
 			</div>
 		</div>
 
-		<div id="slide-progress" class="slide-progress">
-		<strong>01</strong> / 25
-	</div>
+		<div id="slide-progress" class="slide-progress"></div>
 
 	</section> <!-- /. #slideshow -->
 
