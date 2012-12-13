@@ -1,4 +1,7 @@
+<h1>Please Login</h1>
+
 <?php echo $error; ?>
+
 <form method='post' action='<?php echo $form_action; ?>'>
 	<dl>
 		<dt>*PIN: </dt>
