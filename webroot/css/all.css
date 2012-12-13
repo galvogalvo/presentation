@@ -108,7 +108,7 @@ html[xmlns] .clearfix {
 /**************************************************
 	GLOBAL
 **************************************************/
-/* line 5, sass/_global.scss */
+/* line 4, sass/_global.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -118,44 +118,44 @@ body {
   color: #261c02;
   background: #000; }
 
-/* line 15, sass/_global.scss */
+/* line 14, sass/_global.scss */
 h1, h2, h3, strong {
   font-weight: bold; }
 
-/* line 19, sass/_global.scss */
+/* line 18, sass/_global.scss */
 h1 {
   font-size: 60px;
   line-height: 60px;
   letter-spacing: -2px; }
 
-/* line 25, sass/_global.scss */
+/* line 24, sass/_global.scss */
 h2 {
   font-size: 36px;
   margin-top: 25px; }
 
-/* line 30, sass/_global.scss */
+/* line 29, sass/_global.scss */
 header {
   margin-bottom: 80px; }
 
-/* line 34, sass/_global.scss */
+/* line 33, sass/_global.scss */
 p {
   font-size: 28px;
   line-height: 38px;
   margin-bottom: 28px; }
 
-/* line 43, sass/_global.scss */
+/* line 42, sass/_global.scss */
 a, a:visited, a:hover {
   color: #e31936;
   text-decoration: none; }
-/* line 48, sass/_global.scss */
+/* line 47, sass/_global.scss */
 a:active {
   color: #261c02; }
 
-/* line 53, sass/_global.scss */
+/* line 52, sass/_global.scss */
 .highlight {
   color: #e31936; }
 
-/* line 57, sass/_global.scss */
+/* line 56, sass/_global.scss */
 .logo {
   position: absolute;
   font-size: 16px;
@@ -165,7 +165,7 @@ a:active {
   top: 20px;
   left: 20px;
   line-height: 12px; }
-  /* line 67, sass/_global.scss */
+  /* line 66, sass/_global.scss */
   .logo i {
     display: inline-block;
     width: 12px;
@@ -206,12 +206,13 @@ a:active {
       -o-transform: scale(1);
       transform: scale(1); }
     /* line 34, sass/_slideshow.scss */
-    .full .slide img, .full .slide svg, .full .slide video, .full .slide object {
+    .full .slide img, .full .slide video, .full .slide object, .full .slide iframe {
       position: absolute;
       top: 0;
       left: 50%;
       z-index: -1;
       height: 100%;
+      width: 100%;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
