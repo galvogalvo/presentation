@@ -21,6 +21,7 @@ class SlideController extends AppController
 
 		$content = $this->getContent($id);
 		
+		$this->setLayoutVar('presentationId', $id);
 		$this->setVar('presentationContent', $content);
 		$this->setLayout('slide');
 		$this->loadView($this->controllerName . '/default');	
