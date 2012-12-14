@@ -84,6 +84,8 @@ cloudDeck.App = (function() {
 
 			$('.poll-button').on('click', function(aeEvent){
 				aeEvent.preventDefault();
+				$('.poll-button').hide();
+				$('.poll-results').show();
 				_this.requestAnswerPoll($(this).attr('data-poll-value'));
 			});
 		}
@@ -155,12 +157,9 @@ cloudDeck.App = (function() {
 
 	AppProto.updatePoll = function(aoData)
 	{
-		$('.poll-button').hide();
-		$('.poll-results').show();
-	
 		//console.log('data');
 		//console.log(aoData);
-		
+
 		var totalUsers = aoData.no+aoData.yes;
 		//console.log(totalUsers);
 
