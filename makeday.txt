@@ -1,0 +1,78 @@
+![Alt text](https://dl.dropbox.com/u/544452/makeday/pres5.jpg)
+
+
+
+***
+
+
+![Alt text](https://dl.dropbox.com/u/544452/makeday/pres3.jpg)
+
+
+***
+
+
+![Alt text](https://dl.dropbox.com/u/544452/makeday/pres1.jpg)
+
+
+***
+
+
+![Alt text](https://dl.dropbox.com/u/544452/makeday/pres2.jpg)
+
+***
+
+
+![Fixed](https://dl.dropbox.com/u/544452/makeday/pres4.jpg)
+
+
+***
+
+
+![Fixed](https://dl.dropbox.com/u/544452/makeday/pres6.png)
+
+
+***
+
+
+#War and peace
+
+##By Leo Tolstoy
+
+WELL, PRINCE, so Genoa and Lucca are now just family
+estates of the Buonapartes. But I warn you, if you
+don't tell me that this means war, if you still try to defend
+the infamies and horrors perpetrated by that Antichrist
+
+
+***
+
+![image](https://dl.dropbox.com/u/544452/makeday/pres7.jpg)
+
+
+***
+
+
+#War and peace
+
+##By Leo Tolstoy
+
+WELL, PRINCE, so Genoa and Lucca are now just family
+estates of the Buonapartes. But I warn you, if you
+don't tell me that this means war, if you still try to defend
+the infamies and horrors perpetrated by that Antichrist
+
+
+***
+
+#How it works
+
+## Browser based, scalable, realtime
+
+* Markdown, easy to write easy to read
+
+* Responsive, any device, any location
+
+* Realtime sync (using sockets)
+
+* Hosted in the cloud (Heroku)
+
