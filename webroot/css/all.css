@@ -242,46 +242,45 @@ a:active {
   .full h1 {
     font-size: 60px;
     line-height: 60px;
-    letter-spacing: -2px;
-    text-transform: capitalize; }
-    /* line 20, sass/_slideshow.scss */
+    letter-spacing: -2px; }
+    /* line 19, sass/_slideshow.scss */
     .full h1:after {
       content: " /";
       color: #e31936; }
-  /* line 26, sass/_slideshow.scss */
+  /* line 25, sass/_slideshow.scss */
   .full h2 {
     font-size: 36px;
     margin-top: 25px;
     margin-bottom: 80px; }
-  /* line 33, sass/_slideshow.scss */
+  /* line 32, sass/_slideshow.scss */
   .full p, .full ul {
     font-size: 28px;
     line-height: 38px;
     margin-bottom: 28px; }
-  /* line 39, sass/_slideshow.scss */
+  /* line 38, sass/_slideshow.scss */
   .full li {
     list-style: disc inside; }
-  /* line 44, sass/_slideshow.scss */
+  /* line 43, sass/_slideshow.scss */
   .full .logo, .full .logo-cd-small {
     position: absolute;
     z-index: 3;
     top: 20px;
     left: 20px; }
-  /* line 51, sass/_slideshow.scss */
+  /* line 50, sass/_slideshow.scss */
   .full .logo-cd-small {
     top: 81px; }
-  /* line 55, sass/_slideshow.scss */
+  /* line 54, sass/_slideshow.scss */
   .full .slide {
     background: #ffffff;
     position: absolute;
     overflow: hidden;
     visibility: hidden;
     -webkit-transform-origin: 50% 50%; }
-    /* line 62, sass/_slideshow.scss */
+    /* line 61, sass/_slideshow.scss */
     .full .slide.active {
       visibility: visible;
       -webkit-animation: slide cubic-bezier(0.19, 1, 0.22, 1) 400ms forwards; }
-    /* line 67, sass/_slideshow.scss */
+    /* line 66, sass/_slideshow.scss */
     .full .slide section {
       padding: 80px 120px 0;
       width: 784px;
@@ -292,7 +291,7 @@ a:active {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 78, sass/_slideshow.scss */
+    /* line 77, sass/_slideshow.scss */
     .full .slide img, .full .slide video, .full .slide object, .full .slide iframe {
       display: block;
       position: absolute;
@@ -305,7 +304,7 @@ a:active {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-  /* line 89, sass/_slideshow.scss */
+  /* line 88, sass/_slideshow.scss */
   .full .slide-progress {
     position: absolute;
     left: 20px;
