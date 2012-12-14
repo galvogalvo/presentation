@@ -5,7 +5,6 @@ class SlideController extends AppController
 	function __construct(){
 		session_start();
 		$this->setLayout(null);
-		$this->setLayoutVar('pageTitle', PAGE_TITLE_DEFAULT);
 		$this->totalYes = 0;
 		$this->totalNo = 0;
 		$this->votesDir = VOTES_DIR;
@@ -33,6 +32,7 @@ class SlideController extends AppController
 			$this->setLayoutVar('isLeader', 'false');
 		}
 
+		$this->setLayoutVar('pageTitle', PAGE_TITLE_DEFAULT);
 		$this->setLayoutVar('presentationId', $id);
 		$this->setVar('presentationContent', $content);
 		$this->setLayout('slide');
@@ -117,11 +117,11 @@ class SlideController extends AppController
 				//get basic content
 				$line = "<div><section><span class='logo-cd-small'></span><span class='logo faded'><i></i> R/GA</span>".$item."</section></div></div>";
 			
-				//check if there's an image (this is pretty dirty)
-				if(stristr($line, "<img") == true){
-					$class = "slide image";
-				} else if(stristr($line, "youtube.com") == true){ 
+				//check if there's an image or video (this is pretty dirty)
+				if(stristr($line, "youtube.com") == true){ 
 					$class = "slide video";
+				} else if(stristr($line, "<img") == true){
+					$class = "slide image";
 				} else {
 					$class = "slide";
 				}
