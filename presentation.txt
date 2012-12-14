@@ -30,3 +30,10 @@ It does really good paragraphs and sentances.
 ***
 Add funny video
 ***
+#How it works
+## Browser based, scalable, realtime
+* Markdown, easy to write easy to read
+* Responsive, any device, any location
+* Realtime sync (using sockets)
+* Hosted in the cloud (Heroku)
+
