@@ -242,40 +242,46 @@ a:active {
   .full h1 {
     font-size: 60px;
     line-height: 60px;
-    letter-spacing: -2px; }
-  /* line 20, sass/_slideshow.scss */
+    letter-spacing: -2px;
+    text-transform: capitalize; }
+    /* line 20, sass/_slideshow.scss */
+    .full h1:after {
+      content: " /";
+      color: #e31936; }
+  /* line 26, sass/_slideshow.scss */
   .full h2 {
     font-size: 36px;
-    margin-top: 25px; }
-  /* line 25, sass/_slideshow.scss */
-  .full header {
+    margin-top: 25px;
     margin-bottom: 80px; }
-  /* line 29, sass/_slideshow.scss */
-  .full p {
+  /* line 33, sass/_slideshow.scss */
+  .full p, .full ul {
     font-size: 28px;
     line-height: 38px;
     margin-bottom: 28px; }
-  /* line 36, sass/_slideshow.scss */
+  /* line 39, sass/_slideshow.scss */
+  .full li {
+    list-style: disc inside; }
+  /* line 44, sass/_slideshow.scss */
   .full .logo, .full .logo-cd-small {
     position: absolute;
     z-index: 3;
     top: 20px;
     left: 20px; }
-  /* line 43, sass/_slideshow.scss */
+  /* line 51, sass/_slideshow.scss */
   .full .logo-cd-small {
     top: 81px; }
-  /* line 47, sass/_slideshow.scss */
+  /* line 55, sass/_slideshow.scss */
   .full .slide {
     background: #ffffff;
     position: absolute;
     overflow: hidden;
     visibility: hidden;
     -webkit-transform-origin: 50% 50%; }
-    /* line 54, sass/_slideshow.scss */
+    /* line 62, sass/_slideshow.scss */
     .full .slide.active {
       visibility: visible;
       -webkit-animation: slide cubic-bezier(0.19, 1, 0.22, 1) 400ms forwards; }
-    /* line 59, sass/_slideshow.scss */
+    /* line 67, sass/_slideshow.scss */
     .full .slide section {
       padding: 80px 120px 0;
       width: 784px;
@@ -286,7 +292,7 @@ a:active {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 70, sass/_slideshow.scss */
+    /* line 78, sass/_slideshow.scss */
     .full .slide img, .full .slide video, .full .slide object, .full .slide iframe {
       display: block;
       position: absolute;
@@ -299,7 +305,7 @@ a:active {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-  /* line 81, sass/_slideshow.scss */
+  /* line 89, sass/_slideshow.scss */
   .full .slide-progress {
     position: absolute;
     left: 20px;
@@ -442,29 +448,32 @@ a:active {
   -webkit-transform-origin: 100% 0;
   -webkit-animation: new-notification 300ms cubic-bezier(0.19, 1, 0.22, 1); }
 
-/* line 174, sass/_notification.scss */
-.join-notifications li {
-  position: absolute;
-  top: -100px;
-  width: 200px;
-  left: 50%;
-  margin-left: -100px;
-  overflow: hidden;
-  height: 23px;
-  line-height: 23px;
-  background: #eee;
-  border-bottom: 3px solid #000;
-  font-size: 14px;
-  text-align: center;
-  z-index: 1000;
-  -webkit-animation: join 3s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
-/* line 193, sass/_notification.scss */
-.join-notifications strong {
-  display: inline-block;
-  max-width: 100px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
+/* line 172, sass/_notification.scss */
+.join-notifications {
+  position: absolute; }
+  /* line 175, sass/_notification.scss */
+  .join-notifications li {
+    position: absolute;
+    top: -100px;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    overflow: hidden;
+    height: 23px;
+    line-height: 23px;
+    background: #eee;
+    border-bottom: 3px solid #000;
+    font-size: 14px;
+    text-align: center;
+    z-index: 1000;
+    -webkit-animation: join 3s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
+  /* line 194, sass/_notification.scss */
+  .join-notifications strong {
+    display: inline-block;
+    max-width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
 
 /**************************************************
 	PUBLIC PAGES

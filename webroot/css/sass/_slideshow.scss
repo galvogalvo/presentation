@@ -15,21 +15,29 @@
 		font-size: 60px;
 		line-height: 60px;
 		letter-spacing: -2px;
+		text-transform: capitalize;
+
+		&:after {
+			content: " /";
+			color: $highlightColor;
+		}
 	}
 
 	& h2 {
 		font-size: 36px;
 		margin-top: 25px;
-	}
-
-	& header {
 		margin-bottom: 80px;
 	}
 
-	& p {
+	& p,
+	& ul {
 		font-size: 28px;
 		line-height: 38px;
 		margin-bottom: 28px;
+	}
+
+	& li {
+		list-style: disc inside;
 	}
 
 	& .logo,
