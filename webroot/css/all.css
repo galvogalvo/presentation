@@ -449,24 +449,26 @@ a:active {
 
 /* line 172, sass/_notification.scss */
 .join-notifications {
-  position: absolute; }
-  /* line 175, sass/_notification.scss */
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px; }
+  /* line 178, sass/_notification.scss */
   .join-notifications li {
     position: absolute;
-    top: -100px;
     width: 200px;
-    left: 50%;
-    margin-left: -100px;
+    top: -100px;
     overflow: hidden;
     height: 23px;
     line-height: 23px;
     background: #eee;
     border-bottom: 3px solid #000;
     font-size: 14px;
+    list-style: none;
     text-align: center;
     z-index: 1000;
     -webkit-animation: join 3s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
-  /* line 194, sass/_notification.scss */
+  /* line 196, sass/_notification.scss */
   .join-notifications strong {
     display: inline-block;
     max-width: 100px;

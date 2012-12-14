@@ -62,10 +62,6 @@ cloudDeck.App = (function() {
 				}
 			});
 
-			this.channel.bind('join', function(asName) {
-				_this.onJoinReceived(asName);
-			});
-
 			this.channel.bind('ask', function(aoData) {
 				_this.onAskReceived(aoData);
 			});
@@ -91,6 +87,10 @@ cloudDeck.App = (function() {
 		}
 
 		// Everyone
+		this.channel.bind('join', function(asName) {
+				_this.onJoinReceived(asName);
+			});
+
 		this.channel.bind('goTo', function(anPageNumber) {
 			_this.onGoToReceived(anPageNumber);
 		});

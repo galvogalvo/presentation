@@ -27,8 +27,7 @@ It does really good paragraphs and sentances.
 
 ***
 [Kim Jon Un vs Cake](http://www.dailydawdle.com/2012/02/kim-jong-un-really-really-wants-cake-7.html)
-***
-Add funny video
+
 ***
 #How it works
 ## Browser based, scalable, realtime
